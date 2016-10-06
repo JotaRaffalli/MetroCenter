@@ -15,6 +15,7 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
       password: $scope.loginForm.password
     })
     .then(function onSuccess (){
+     // lleva a 
       window.location = '/';
     })
     .catch(function onError(sailsResponse) {

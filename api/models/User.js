@@ -9,6 +9,7 @@ module.exports = {
 
   attributes: {
 
+  	
 
   	nombre : { 
   		type: 'string',
@@ -24,10 +25,12 @@ module.exports = {
   		type: 'string',
   		email: true,
   		required: true,
+  		unique: true,
   	}
 
   	contraseñaEncriptada : {
 
+  		type : 'string',
 
   	}
   }
