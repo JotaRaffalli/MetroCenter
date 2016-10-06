@@ -38,7 +38,6 @@ var jsFilesToInject = [
   // will be injected here in no particular order.
   
   'js/public/signup/ModuloDeRegistro.js',
-  'js/public/homepage/ModuloHomePage.js',
   'js/**/*.js'
 ];
 
