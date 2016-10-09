@@ -14,19 +14,19 @@ module.exports = {
   	nombre : { 
   		type: 'string',
   		required: true,
-  	}
+  	},
 
   	apellido : {
   		type: 'string',
   		required: true,
-  	}
+  	},
 
   	email : {
   		type: 'string',
   		email: true,
   		required: true,
   		unique: true,
-  	}
+  	},
 
   	contraseñaEncriptada : {
 

@@ -10,9 +10,9 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     $scope.loginForm.loading = true;
 
     
-    $http.put('/login', {
+    $http.post('/login', {
       email: $scope.loginForm.email,
-      password: $scope.loginForm.password
+      contraseña: $scope.loginForm.password
     })
     .then(function onSuccess (){
      // lleva a 

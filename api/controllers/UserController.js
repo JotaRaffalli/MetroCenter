@@ -7,20 +7,17 @@
 
 module.exports = {
 
-	  login: function (req, res) {
+	login: function (req, res) {
 
-    
-    User.findOne({
-    	email: req.param('email')
-    }, function UsuarioEncontrado(err, user) {
-      if (err) return res.negotiate(err);
-      if (!user) return res.notFound();
 
-      alert('se encontro al usuario con id:'+user.id);
+// var h=User.query('SELECT nombre from user where email='+req.param('email'));
+// console.log(h.);
 
-    });
+   
 
-  }
+   
+      
+   }
 	
 };
 
