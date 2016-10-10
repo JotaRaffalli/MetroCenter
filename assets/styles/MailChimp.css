@@ -90,6 +90,8 @@
   */
     body,#bodyTable{
       /*@editable*/background-color:#ff7f50;
+      padding-left:100;
+      padding-right:100;
     }
   /*
   @tab Page
@@ -121,7 +123,6 @@
       /*@editable*/font-weight:bold;
       /*@editable*/line-height:125%;
       /*@editable*/letter-spacing:normal;
-      /*@editable*/text-align:left;
     }
   /*
   @tab Page
