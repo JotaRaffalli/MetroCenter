@@ -10,9 +10,9 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     $scope.loginForm.loading = true;
 
     
-    $http.post('/login', {
+    $http.put('/login', {
       email: $scope.loginForm.email,
-      contraseña: $scope.loginForm.password
+      //contraseña: $scope.loginForm.password
     })
     .then(function onSuccess (){
      // lleva a 
@@ -22,13 +22,13 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
 
       if (sailsResponse.status === 400 || 404) {
 
-        toastr.error('Email Incorrecto :c', 'Error', {
+          toastr.error('Email Incorrecto :c', 'Error', {
           closeButton: true
         });
         return;
       }
 
-				toastr.error('Ha ocurrido un error extraño o.o', 'Error', {
+				  toastr.error('Ha ocurrido un error extraño o.o', 'Error', {
 					closeButton: true
 				});
 				return;
