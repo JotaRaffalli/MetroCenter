@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="/styles/angular-toastr.css">
     <link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
     <link rel="stylesheet" href="/styles/importer.css">
-<<<<<<< HEAD
+
     <link rel="stylesheet" href="/styles/mailchimp.css">
-<!-- STYLES END -->
-=======
+  <!-- STYLES END -->
+
     <link rel="stylesheet" type="text/css" href="/styles/mailchimp.css">
     <!-- Styles End -->
->>>>>>> origin/master
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,7 +53,21 @@
           <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
-
+          <!-- ******************BARRA DE NAVEGACION A OTRAS PAGINAS ****************** -->
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas Básicas
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="/signup">Acerca de Nosotros</a></li>
+              <li><a href="/signup">Contáctanos</a></li>
+              </ul>
+              </li>
+              <a href="#"><button class="btn btn-primary" type="button">Perfil</button></a>
+ 
+            </ul>
           <!-- ******************Simple Formulario de LogIn ****************** -->
           <!-- LOGIN FORM -->  
           <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
@@ -78,6 +91,7 @@
               <input type="hidden" name="_csrf" value="<%= _csrf %>" />
           </form>
         </nav>
+        </div>
       </div>
 
         <center>
@@ -188,7 +202,7 @@
     <p>
     </p>
         <td class="mcnTextContent" style="padding:0 9px 0 9px;" width="364" valign="top">
-            <span style="color:#FF8C00">¡No te pierdas de los mejores útiles universitarios para obtener los mejores resultados de tu esfuerzo!</span>
+            <span style="color:#FF8C00">¡No te pierdas de la mejor experiencia universitaria para obtener los mejores resultados de tu esfuerzo!</span>
         </td>
     </tr>
 </tbody></table>
@@ -229,7 +243,7 @@
                             <h1>¡No te pierdas de la mejor experiencia universitaria!</h1>
 
 <div style="text-align: justify;"><br>
-Usa nuestra página para encontrar todo lo que necesites: reserva de espacios académicos, información sobre los locales de comida de la universidad, pago del estacionamiento, compra de materiales universitarios con entrega dentro de la universidad y ¡diferentes paquetes que mezclan todo lo anterior!</div>
+Usa nuestra página para encontrar todo lo que necesites: reserva de espacios académicos, información sobre los locales de comida de la universidad, pago del estacionamiento, compra de materiales universitarios con entrega dentro de la universidad y ¡diferentes paquetes de estos útiles!</div>
 <p>
 </p>
 <div class="w3-container">
@@ -497,5 +511,7 @@ UNIMET<br>
         <script src="/js/dependencies/compareTo.js"></script>
         <script src="/js/public/signup/ModuloDeRegistro.js"></script>
         <script src="/js/public/signup/ControladorDeRegistro.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
