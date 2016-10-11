@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>perfil</title>
+	<!--STYLES-->
+	<link rel="stylesheet" href="/styles/angular-toastr.css">
+	<link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
+	<link rel="stylesheet" href="/styles/importer.css">
+	<link rel="stylesheet" href="/styles/MailChimp.css">
+	<!--STYLES END-->
+
+
+</head>
+<body>
+
+<!-- Crea la barra de navegacion -->
+        <nav class="navbar navbar-default navbar-inverse">
+      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          
+        </nav>
+        <div id="nombre" ng-app="myApp" ng-controller="myCtrl">
+           <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th> Nombre : </th>
+                        <th> Apellido : </th>
+                        <th> Email : </th>
+                    </tr>
+                    <tr>
+                        <th>{{ usuario.nombre }}</th>
+                        <th>{{ usuario.apellido }}</th>
+                        <th>{{ usuario.email }}</th>
+                    </tr>
+                </thead>
+            </table>
+            
+        </div>
+
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dependencies/angular.js"></script>
+<script src="/js/dependencies/toastr.js"></script>
+<script src="/js/dependencies/compareTo.js"></script>
+<script src="/js/public/signup/ModuloDeRegistro.js"></script>
+<script src="/js/public/homepage/ModuloHomePage.js"></script>
+<script src="/js/public/perfil/ModuloDePerfil.js"></script>
+<script src="/js/public/homepage/ControladorDeHomePage.js"></script>
+<script src="/js/public/perfil/ControladorDePerfil.js"></script>
+<script src="/js/public/signup/ControladorDeRegistro.js"></script>
+<!--SCRIPTS END-->
+
+</body>
+</html>
