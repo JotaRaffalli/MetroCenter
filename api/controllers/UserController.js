@@ -9,7 +9,7 @@ module.exports = {
   
      login: function (req, res) {
 
-    // Try to look up user using the provided email address
+    // Intnta localizar el usuario a traves de su email
     User.findOne({
       email: req.param('email')
     }, function foundUser(err, user) {
@@ -17,16 +17,33 @@ module.exports = {
       if (!user) return res.notFound();
       console.log(user.nombre);
       res.ok();
+      return user;
 
 
      
     });
 
+    return res;
   },
 
-  function function_name(argument) {
-     // body...
-   } 
-	
+  perfil: function (req, res)
+  {
+      User.findOne({
+      email: req.param('email')
+      }, function foundUser(err, user) {
+      if (err) return res.negotiate(err);
+      if (!user) return res.notFound();
+      console.log(user.nombre);
+      res.ok();
+      var usuario= user;
+      res.redirect('/profile');
+      return usuario;
+
+
+      
+     
+    });
+    
+	}
 };
 

@@ -16,6 +16,10 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     })
     .then(function onSuccess (){
      // lleva a 
+        $http.post('/perfil', {
+          usuario: $scope.res,
+          //contraseña: $scope.loginForm.password
+        });
       window.location = '/';
     })
     .catch(function onError(sailsResponse) {
@@ -39,5 +43,10 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     });
   };
 
+
+  $scope.perfil = function () 
+  {
+    
+  }
 
 }]);
