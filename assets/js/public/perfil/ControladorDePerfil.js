@@ -1,4 +1,4 @@
-angular.module('myApp').controller('myCtrl', function($scope, $http) {
+angular.module('ModuloDePerfil').controller('ControladorDePerfil', function($scope, $http) {
           User.findOne({
           email: "raffallijoseluis@gmail.com"
       }, function foundUser(err, user) {
@@ -9,4 +9,4 @@ angular.module('myApp').controller('myCtrl', function($scope, $http) {
           return usuario;
 
       });
-            }
+     });

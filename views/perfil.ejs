@@ -11,7 +11,7 @@
 
 
 </head>
-<body>
+<body ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" ng-cloak>
 
 <!-- Crea la barra de navegacion -->
         <nav class="navbar navbar-default navbar-inverse">
@@ -30,8 +30,8 @@
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
           
         </nav>
-        <div id="nombre" ng-app="myApp" ng-controller="myCtrl">
-           <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+         
+           <table>
                 <thead>
                     <tr>
                         <th> Nombre : </th>
@@ -46,7 +46,7 @@
                 </thead>
             </table>
             
-        </div>
+        
 
 <!--SCRIPTS-->
 <script src="/js/dependencies/sails.io.js"></script>
