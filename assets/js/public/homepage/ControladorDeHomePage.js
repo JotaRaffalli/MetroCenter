@@ -10,14 +10,16 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     $scope.loginForm.loading = true;
 
     
-    $http.put('/login', {
-      email: $scope.loginForm.email,
-      //contraseña: $scope.loginForm.password
-    })
-    .then(function onSuccess (){
+    $http
+    .get('/login', {
+        params: {
+          email: $scope.loginForm.email
+        }
+     })
+    .then(function onSuccess (response){
      // lleva a 
-      
-      toastr["success"]("Bienvenido!");
+      var usuario = response.data;
+      toastr["success"]("Bienvenido!"+$scope.usuario.nombre);
       window.location = '/';
 
     })
