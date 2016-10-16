@@ -40,7 +40,7 @@ module.exports = {
           id: user.id,
           name: user.nombre,
           email: user.email,
-          title: user.apellido,
+          apellido: user.apellido,
           carnet: user.carnet
         }
       });
