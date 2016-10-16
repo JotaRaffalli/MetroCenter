@@ -6,12 +6,19 @@
 	<link rel="stylesheet" href="/styles/angular-toastr.css">
 	<link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
 	<link rel="stylesheet" href="/styles/importer.css">
-	<link rel="stylesheet" href="/styles/MailChimp.css">
 	<!--STYLES END-->
 
+<script type="text/javascript">
+    window.SAILS_LOCALS = {
+      _csrf: '<%= _csrf %>',
+      me: <%- JSON.stringify(me) %>
+    };
+
+    // var u=me.toJSON();
+    </script>
 
 </head>
-<body ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" ng-cloak>
+<body onload="alerta()">
 
 <!-- Crea la barra de navegacion -->
         <nav class="navbar navbar-default navbar-inverse">
@@ -31,7 +38,7 @@
           
         </nav>
          
-           <table>
+           <table ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil">
                 <thead>
                     <tr>
                         <th> Nombre : </th>
@@ -39,15 +46,12 @@
                         <th> Email : </th>
                     </tr>
                     <tr>
-                        <th>{{ usuario.nombre }}</th>
-                        <th>{{ usuario.apellido }}</th>
-                        <th>{{ usuario.email }}</th>
+                        <th>{{ usuarios.nombre }}</th>
+                        <th>{{ usuarios.apellido }}</th>
+                        <th>{{ usuarios.email }}</th>
                     </tr>
                 </thead>
-            </table>
-            
-        
-
+            </table>               
 <!--SCRIPTS-->
 <script src="/js/dependencies/sails.io.js"></script>
 <script src="/js/dependencies/angular.js"></script>
@@ -55,11 +59,32 @@
 <script src="/js/dependencies/compareTo.js"></script>
 <script src="/js/public/signup/ModuloDeRegistro.js"></script>
 <script src="/js/public/homepage/ModuloHomePage.js"></script>
-<script src="/js/public/perfil/ModuloDePerfil.js"></script>
 <script src="/js/public/homepage/ControladorDeHomePage.js"></script>
-<script src="/js/public/perfil/ControladorDePerfil.js"></script>
 <script src="/js/public/signup/ControladorDeRegistro.js"></script>
 <!--SCRIPTS END-->
+
+<script>
+        //NO MODIFICAR
+
+        var app = angular.module('ModuloDePerfil', []);
+        
+        app.controller('ControladorDePerfil', function($scope, $http) {
+            
+          //$scope.usuarios = usuario;
+        
+           $http.get('/homepage/usuarios.json').success(function(data){
+           $scope.usuarios = data;
+     });
+
+        
+        });
+
+        function alerta () { }
+
+
+        
+    </script>
+
 
 </body>
 </html>

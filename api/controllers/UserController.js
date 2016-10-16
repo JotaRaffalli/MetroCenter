@@ -10,19 +10,25 @@ module.exports = {
      login: function (req, res) {
 
     // Try to look up user using the provided email address
-    var usuario;
+      //var usuario;
       User.findOne({
       email: req.param('email')
     }, function foundUser(err, user) {
       if (err) return res.negotiate(err);
       if (!user) return res.notFound();
+      
       console.log(user.nombre);
-      res.ok();
-      usuario = user;
-    });
-      return usuario;
-  },
 
+      req.session.me = user.id;   // returned from a database
+
+      return res.json(user);
+
+      //usuario = user;
+      //res=user;
+      //return res;
+    });
+
+  },
 
 };
 

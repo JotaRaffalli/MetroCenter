@@ -10,17 +10,32 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     $scope.loginForm.loading = true;
 
     
-    $http
-    .get('/login', {
-        params: {
-          email: $scope.loginForm.email
-        }
-     })
+    $http.put('/login', {
+      email: $scope.loginForm.email,
+      //contraseña: $scope.loginForm.password
+    })
     .then(function onSuccess (response){
      // lleva a 
-      var usuario = response.data;
-      toastr["success"]("Bienvenido!"+$scope.usuario.nombre);
-      window.location = '/';
+      $scope.usuario= response.data;
+      toastr["success"]("Bienvenido: "+$scope.usuario.nombre);
+      toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+      //window.location = '/';
 
     })
     .catch(function onError(sailsResponse) {
@@ -42,6 +57,24 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     .finally(function eitherWay(){
       $scope.loginForm.loading = false;
     });
+  };
+
+  $scope.enviarAperfil = function() {
+    $http({
+      url: '/perfil',
+      method: "POST",
+      data: { 'usuario' : $scope.usuario},
+      headers: { 'Content-Type': 'application/json' }
+      }).then(function(response) {
+          // exito
+          window.location = '/perfil';
+      }, 
+      function(response) { // optional
+          // error
+          toastr.error('No se pudo enviar la información', 'Error', {
+          closeButton: true
+        });
+      });
   };
 
 
