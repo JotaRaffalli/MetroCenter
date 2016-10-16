@@ -11,7 +11,7 @@
 
 
 </head>
-<body ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" ng-cloak>
+<body ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil2" ng-cloak>
 
 <!-- Crea la barra de navegacion -->
         <nav class="navbar navbar-default navbar-inverse">
@@ -38,7 +38,7 @@
                         <th> Apellido : </th>
                         <th> Email : </th>
                     </tr>
-                    <tr>
+                    <tr ng-repeat="usuario in list.userInfo">
                         <th>{{ usuario.nombre }}</th>
                         <th>{{ usuario.apellido }}</th>
                         <th>{{ usuario.email }}</th>
