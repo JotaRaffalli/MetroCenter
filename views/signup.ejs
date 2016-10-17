@@ -27,49 +27,6 @@
    <body ng-app="ModuloDeRegistro" ng-controller="ControladorDeRegistro" ng-cloak>
     <div class="container-fluid">
 
-      <!-- Crea la barra de navegacion -->
-        <nav class="navbar navbar-default navbar-inverse">
-      
-          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-      
-            <!-- Lineas que salen cuando el menu se colapsa-->
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <!-- Nombre de la app -->
-          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
-          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-
-
-          <!-- ******************Simple Formulario de LogIn ****************** -->
-          <!-- LOGIN FORM -->  
-          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
-
-              <!-- EMAIL -->
-              <div class="form-group">
-                  <input ng-model="loginForm.email" type="text" placeholder="Email / Carnet" name="email" class="form-control">
-              </div>
-
-              <!-- CONTRASEÑA -->
-              <div class="form-group">
-                  <input ng-model="loginForm.password" type="password" placeholder="Contraseña" name="password" class="form-control">
-              </div>
-
-              <!-- SUBMIT -->
-              <button type="submit" class="btn btn-success">
-                <span ng-show="!loginForm.loading">Entrar</span>
-                <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-                <span ng-show="loginForm.loading">Entrando...</span>
-              </button>
-              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-          </form>
-        </nav>
-      </div>
-    </div>
-
     <!-- ******************Complejo Formulario de Signup extraido de internet ****************** -->
 
     <!-- SIGNUP FORM -->
