@@ -37,8 +37,62 @@
     <body ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak>
      <div class="container-fluid">
 
-     
-    
+      <!-- Crea la barra de navegacion -->
+        <nav class="navbar navbar-default navbar-inverse">
+      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+          <!-- ******************BARRA DE NAVEGACION A OTRAS PAGINAS ****************** -->
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas Básicas
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="/signup">Acerca de Nosotros</a></li>
+              <li><a href="/signup">Contáctanos</a></li>
+              </ul>
+              </li>
+              <a href="#"><button class="btn btn-primary" type="button">Perfil</button></a>
+ 
+            </ul>
+          <!-- ******************Simple Formulario de LogIn ****************** -->
+          <!-- LOGIN FORM -->  
+          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
+
+              <!-- EMAIL -->
+              <div class="form-group">
+                  <input ng-model="loginForm.email" type="text" placeholder="Email / Carnet" name="email" class="form-control">
+              </div>
+
+              <!-- CONTRASEÑA -->
+              <div class="form-group">
+                  <input ng-model="loginForm.password" type="password" placeholder="Contraseña" name="password" class="form-control">
+              </div>
+
+              <!-- SUBMIT -->
+              <button type="submit" class="btn btn-success">
+                <span ng-show="!loginForm.loading">Entrar</span>
+                <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+                <span ng-show="loginForm.loading">Entrando...</span>
+              </button>
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </form>
+        </nav>
+        </div>
+      </div>
 
         <center>
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
