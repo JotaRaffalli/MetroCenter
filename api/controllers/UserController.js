@@ -10,7 +10,7 @@ module.exports = {
      login: function (req, res) {
 
     // Try to look up user using the provided email address
-    User.findOne({
+      User.findOne({
       email: req.param('email')
     }, function foundUser(err, user) {
       if (err) return res.negotiate(err);
@@ -22,7 +22,8 @@ module.exports = {
      
     });
 
-  }
-	
+  },
+
+
 };
 

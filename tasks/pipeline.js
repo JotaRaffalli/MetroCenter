@@ -39,6 +39,7 @@ var jsFilesToInject = [
   
   'js/public/signup/ModuloDeRegistro.js',
   'js/public/homepage/ModuloHomePage.js',
+  'js/public/perfil/ModuloDePerfil.js',
   'js/**/*.js'
 ];
 

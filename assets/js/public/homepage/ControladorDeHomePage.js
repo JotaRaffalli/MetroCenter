@@ -16,7 +16,10 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     })
     .then(function onSuccess (){
      // lleva a 
+      
+      toastr["success"]("Bienvenido!");
       window.location = '/';
+
     })
     .catch(function onError(sailsResponse) {
 
