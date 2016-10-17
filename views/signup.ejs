@@ -3,25 +3,28 @@
   <head>
     <title>Suscripcion</title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
+    <!-- Viewport responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/angular-toastr.css">
     <link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
     <link rel="stylesheet" href="/styles/importer.css">
-    <link rel="stylesheet" href="/styles/MailChimp.css">
     <!--STYLES END-->
 
-    <!-- <style type="text/css">
-      .form-signin {padding-left: -100px; padding-right: -100px; }
-      
-    </style> -->
-
+    
+    <!-- NO TOCAR -->
+    <style type="text/css">
+    .form-signin {margin-top: -20px;}
+    </style>
+    
     <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
     <script type="text/javascript">
     window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
     </script>
+
+    <!-- NO TOCAR -->
+
   </head>
 
    <body ng-app="ModuloDeRegistro" ng-controller="ControladorDeRegistro" ng-cloak>
@@ -43,8 +46,6 @@
           <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
-
-          <!-- ******************Simple Formulario de LogIn ****************** -->
           <!-- LOGIN FORM -->  
           <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
 
@@ -70,7 +71,7 @@
       </div>
     </div>
 
-    <!-- ******************Complejo Formulario de Signup extraido de internet ****************** -->
+    <!-- ******************************************************************************** -->
 
     <!-- SIGNUP FORM -->
     
@@ -80,9 +81,6 @@
 
         <!-- Nombre -->
 
-        <!-- checking whether the form "signup" with the "name" property is both $invalid AND $dirty.  If it is
-        insert the "has-error" class on the input field (i.e. insert a red border around the input field)
-        -->
         <div class="control-group form-group col-md-12"
         ng-class="{'has-error':signup.name.$invalid &&
                               signup.name.$dirty}">
@@ -91,8 +89,6 @@
           <!-- Es requerido y tiene un max de 20 caracteres-->
           <input type="text" class="form-control" placeholder="Ej: José" name="name" ng-model="signupForm.name" ng-maxlength="20" required>
 
-          <!-- If signup.name.$dirty is true, show the message depending upon the particular properties truthiness (e.g. required
-          and/or maxlength) -->
           <span class="help-block has-error" ng-if="signup.name.$dirty">
             <span ng-show="signup.name.$error.required">El nombre es un campo obligatorio.</span>
             <span ng-show="signup.name.$error.maxlength">No puede contener más de 50 caracteres.</span>
@@ -104,7 +100,7 @@
         <div class="control-group form-group col-md-12"
           ng-class="{'has-error':signup.title.$invalid &&
                                 signup.title.$dirty}">
-          <label>Apellido</label>
+          <label>Primer Apellido</label>
           <input type="text" class="form-control" placeholder="Ej: Raffalli" name="title" ng-model="signupForm.title" ng-maxlength="20" required>
           <span class="help-block has-error" ng-if="signup.title.$dirty">
             <span ng-show="signup.title.$error.required">Apellido es requerido.</span>
@@ -122,6 +118,22 @@
           <span class="help-block has-error" ng-if="signup.email.$dirty">
             <span ng-show="signup.email.$error.required">Email es requerido.</span>
             <span ng-show="signup.email.$error.email">No es una dirección de correo válida</span>
+          </span>
+        </div>
+
+        <!-- Carnet -->
+
+        <div class="control-group form-group col-md-12"
+        ng-class="{'has-error':signup.carnet.$invalid &&
+                              signup.carnet.$dirty}">
+          <label>Carnet</label>
+
+          <!-- Es requerido y tiene un max de 20 caracteres-->
+          <input type="text" class="form-control" placeholder="Ej: 20141110210" name="carnet" ng-model="signupForm.carnet" ng-maxlength="12" required>
+
+          <span class="help-block has-error" ng-if="signup.carnet.$dirty">
+            <span ng-show="signup.carnet.$error.required">El Carnet es un campo obligatorio.</span>
+            <span ng-show="signup.carnet.$error.maxlength">No puede contener más de 12 caracteres.</span>
           </span>
         </div>
 
@@ -162,8 +174,7 @@
 
       <input type="hidden" name="_csrf" value="<%= _csrf %>" />
     </form>
-
-
+    <!-- ******************************************************************************** -->
 
     <div class="container">
         <hr>
@@ -183,9 +194,7 @@
     <script src="/js/dependencies/compareTo.js"></script>
     <script src="/js/public/signup/ModuloDeRegistro.js"></script>
     <script src="/js/public/homepage/ModuloHomePage.js"></script>
-    <script src="/js/public/perfil/ModuloDePerfil.js"></script>
     <script src="/js/public/homepage/ControladorDeHomePage.js"></script>
-    <script src="/js/public/perfil/ControladorDePerfil.js"></script>
     <script src="/js/public/signup/ControladorDeRegistro.js"></script>
     <!--SCRIPTS END-->
   </body>
