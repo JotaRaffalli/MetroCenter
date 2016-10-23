@@ -1,4 +1,4 @@
-![Metro Center WebApp]({{site.baseurl}}/https://drive.google.com/open?id=0B8OF0lMOJK5IdU1fZ3hBOUtFYms)
+![Metro Center WebApp]({{site.baseurl}}/https://github.com/JotaRaffalli/metro_center/blob/master/assets/MetrocenterLogo(600x300).png)
 
 # MetroCenter WebApp
 
