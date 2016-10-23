@@ -1,4 +1,4 @@
-angular.module('ModuloDeRegistro').controller('ControladorDeRegistro', ['$scope','$http', function($scope, $http){
+angular.module('ModuloDeRegistro').controller('ControladorDeRegistro', ['$scope','$http','toastr', function($scope, $http,toastr){
 	
 	// Ponemos la pagina en carga default falsa
 	$scope.signupForm = {
@@ -14,6 +14,7 @@ angular.module('ModuloDeRegistro').controller('ControladorDeRegistro', ['$scope'
 			nombre: $scope.signupForm.name,
 			apellido: $scope.signupForm.title,
 			email: $scope.signupForm.email,
+			carnet: $scope.signupForm.carnet,
 			contraseña: $scope.signupForm.password
 		})
 		.then(function onSuccess(sailsResponse){
@@ -22,7 +23,13 @@ angular.module('ModuloDeRegistro').controller('ControladorDeRegistro', ['$scope'
 
 		})
 		.catch(function onError(sailsResponse){
-			console.log(sailsResponse);
+			var CarnetDuplicado = sailsResponse.status == 409;
+
+			if (CarnetDuplicado) 
+			{
+				toastr.error('Disculpe, pero ese carnet ya esta en uso. Por favor intente con otro.', 'Error');
+				return;
+			}
 		})
 		.finally(function eitherWay(){
 			$scope.signupForm.loading = false;

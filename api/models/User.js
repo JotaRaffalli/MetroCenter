@@ -26,7 +26,13 @@ module.exports = {
   		email: true,
   		required: true,
   		unique: true,
-  	},
+  	},   
+
+    carnet : {
+      type: 'string',
+      required: true,
+      unique: true,
+    },
 
   	contraseñaEncriptada : {
 
