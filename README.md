@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="/assets/MetrocenterLogoForPage.png" alt="MetroCenter WebApp"/>
+</p>
 ![MetroCenter WebApp](/assets/MetrocenterLogoForPage.png)
 
 # MetroCenter WebApp
