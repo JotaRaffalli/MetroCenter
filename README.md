@@ -1,4 +1,4 @@
-![MetroCenter WebApp](/assets/MetrocenterLogo(600x300).png)
+![MetroCenter WebApp](/assets/MetrocenterLogoForPage.png)
 
 # MetroCenter WebApp
 
