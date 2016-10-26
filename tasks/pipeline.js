@@ -30,6 +30,7 @@ var jsFilesToInject = [
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/angular.js',
+  'js/dependencies/jquery.js',
   'js/dependencies/toastr.js',
   'js/dependencies/compareTo.js',
   'js/dependencies/**/*.js',
