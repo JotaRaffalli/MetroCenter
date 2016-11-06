@@ -8,7 +8,6 @@
 
     footer 
     {
-      background-color: #f2f2f2;
       padding: 25px;
     }
     
@@ -30,6 +29,39 @@
   </style>
 
 </head>
+
+<header > 
+    <nav class="navbar navbar-default navbar-inverse">      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+          <!-- Links -->
+          <ul class="nav navbar-nav" style="margin-left: 30px;" >
+            <li class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="/signup">Acerca de Nosotros</a></li>
+              <li><a href="/signup">Contáctanos</a></li>
+              <li><a href="/perfil">Perfil</a></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+      </nav>
+  </header>
+
 <body>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -42,18 +74,20 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+        <img src="images/Ul_upperstacksarea.jpg">
         <div class="carousel-caption">
-          <h3>Cubículos</h3>
-          <p>Ez money bi@c#</p>
+          <h2>Cubículos</h2>
+          <p>¿Deseas estudiar con un grupo y no sabes si hay algún cubículo disponible? ¡Haz click en el botón para ver ya su disponibilidad!</p>
+          <p><a class="btn btn-lg btn-primary" href="/espacios/cubiculos" role="button">ver</a>
         </div>
       </div>
 
       <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <img src="images/Auditorio8.jpg">
         <div class="carousel-caption">
-          <h3>More Sell $</h3>
-          <p>Lorem ipsum...</p>
+          <h2>Auditorios</h2>
+          <p>Si estas interesado en ver la disponibilidad de los Auditorios de la Universidad haz click en el siguiente enlace</p>
+          <p><a class="btn btn-lg btn-primary" href="/espacios/auditorios" role="button">ver</a></p>
         </div>
       </div>
     </div>
@@ -70,22 +104,22 @@
 </div>
   
 <div class="container text-center">
-  <h3>What We Do</h3><br>
+  <h3>Espacios Académicos</h3><br>
   <div class="row">
     <div class="col-sm-4">
       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
+      <p>Auditorios</p>
     </div>
     <div class="col-sm-4">
       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>
+      <p>Cubículos</p>
     </div>
     <div class="col-sm-4">
       <div class="well">
-       <p>Some text..</p>
+       <p>No te eches el viaje a la biblioteca sólamente para devolverte :(</p>
       </div>
       <div class="well">
-       <p>Some text..</p>
+       <p>Echa un vistazo a los lugares de exposición y entretenimiento que ofrece tu Universiad.</p>
       </div>
     </div>
   </div>

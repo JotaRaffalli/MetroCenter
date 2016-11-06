@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Suscripcion</title>
+    <title>Suscripción</title>
 
     <!-- Viewport responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/angular-toastr.css">
-    <link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
-    <link rel="stylesheet" href="/styles/carrusel.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-
-    
-    <!-- NO TOCAR -->
+    <!-- Css propio -->
     <style type="text/css">
     .form-signin {margin-top: -20px;}
     </style>
     
-    <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
+    <!--Para poder cargar de una vez la data -->
     <script type="text/javascript">
     window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
     </script>
-
-    <!-- NO TOCAR -->
-
+    
   </head>
 
-   <body ng-app="ModuloDeRegistro" ng-controller="ControladorDeRegistro" ng-cloak>
-    <div class="container-fluid">
-
-      <!-- Crea la barra de navegacion -->
-        <nav class="navbar navbar-default navbar-inverse">
-      
+<header > 
+    <nav class="navbar navbar-default navbar-inverse">      
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
       
@@ -47,34 +33,28 @@
           <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
-          <!-- LOGIN FORM -->  
-          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
+          <!-- Links -->
+          <ul class="nav navbar-nav" style="margin-left: 30px;" >
+            <li class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="/signup">Acerca de Nosotros</a></li>
+              <li><a href="/signup">Contáctanos</a></li>
+              <li><a href="/perfil">Perfil</a></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+      </nav>
+  </header>
 
-              <!-- EMAIL -->
-              <div class="form-group">
-                  <input ng-model="loginForm.email" type="text" placeholder="Email / Carnet" name="email" class="form-control">
-              </div>
+<body ng-app="ModuloDeRegistro" ng-controller="ControladorDeRegistro" ng-cloak>
 
-              <!-- CONTRASEÑA -->
-              <div class="form-group">
-                  <input ng-model="loginForm.password" type="password" placeholder="Contraseña" name="password" class="form-control">
-              </div>
 
-              <!-- SUBMIT -->
-              <button type="submit" class="btn btn-success">
-                <span ng-show="!loginForm.loading">Entrar</span>
-                <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-                <span ng-show="loginForm.loading">Entrando...</span>
-              </button>
-              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-          </form>
-        </nav>
-      </div>
-    </div>
-
-    <!-- ******************************************************************************** -->
-
-    <!-- SIGNUP FORM -->
+<!-- ******************************************************************************** -->
+    <!-- SIGNUP FORMULARIO -->
     
     <form ng-submit="submitSignupForm()" id="sign-up-form" class="form-signin" name="signup">
       <h2 class="form-signin-heading">Registro:</h2>
@@ -84,7 +64,7 @@
 
         <div class="control-group form-group col-md-12"
         ng-class="{'has-error':signup.name.$invalid &&
-                              signup.name.$dirty}">
+                               signup.name.$dirty}">
           <label>Nombre</label>
 
           <!-- Es requerido y tiene un max de 20 caracteres-->
@@ -100,7 +80,7 @@
 
         <div class="control-group form-group col-md-12"
           ng-class="{'has-error':signup.title.$invalid &&
-                                signup.title.$dirty}">
+                                 signup.title.$dirty}">
           <label>Primer Apellido</label>
           <input type="text" class="form-control" placeholder="Ej: Raffalli" name="title" ng-model="signupForm.title" ng-maxlength="20" required>
           <span class="help-block has-error" ng-if="signup.title.$dirty">
@@ -113,7 +93,7 @@
 
         <div class="control-group form-group col-md-12"
         ng-class="{'has-error':signup.email.$invalid &&
-                              signup.email.$dirty}">
+                               signup.email.$dirty}">
           <label>Dirección de Correo Electrónico</label>
           <input type="email" class="form-control" placeholder="Ej: rmatienzo@gmail.com" name="email" ng-model="signupForm.email" required >
           <span class="help-block has-error" ng-if="signup.email.$dirty">
@@ -126,7 +106,7 @@
 
         <div class="control-group form-group col-md-12"
         ng-class="{'has-error':signup.carnet.$invalid &&
-                              signup.carnet.$dirty}">
+                               signup.carnet.$dirty}">
           <label>Carnet</label>
 
           <!-- Es requerido y tiene un max de 20 caracteres-->
@@ -142,7 +122,7 @@
 
         <div class="control-group form-group col-md-6"
         ng-class="{'has-error':signup.password.$invalid &&
-                              signup.password.$dirty}">
+                               signup.password.$dirty}">
           <label>Contraseña</label>
           <!-- Added the compareTo directive that compares the passowrds -->
           <input type="password" class="form-control" placeholder="De 6 caracteres mínimo" name="password" ng-model="signupForm.password" id="password" required ng-minlength="6" compare-to="signupForm.confirmPassword" >
@@ -175,30 +155,7 @@
 
       <input type="hidden" name="_csrf" value="<%= _csrf %>" />
     </form>
-    <!-- ******************************************************************************** -->
-
-    <div class="container">
-        <hr>
-        <footer class="footer pull-right">
-            <div>
-                <a href="http://sailsjs.com/">http://www.unimet.edu.ve/</a>
-                <div>MetroCenter todos los derechos reservados</div>
-            </div>
-        </footer>
-    </div>
-
-    
-    <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/dependencies/angular.js"></script>
-    <script src="/js/dependencies/jquery.js"></script>
-    <script src="/js/dependencies/toastr.js"></script>
-    <script src="/js/dependencies/compareTo.js"></script>
-    <script src="/js/dependencies/bootstrap.js"></script>
-    <script src="/js/public/signup/ModuloDeRegistro.js"></script>
-    <script src="/js/public/homepage/ModuloHomePage.js"></script>
-    <script src="/js/public/homepage/ControladorDeHomePage.js"></script>
-    <script src="/js/public/signup/ControladorDeRegistro.js"></script>
-    <!--SCRIPTS END-->
+<!-- ******************************************************************************** -->
   </body>
+
 </html>

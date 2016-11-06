@@ -32,13 +32,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {view: 'homepage'}, // Temporalmente desactive el homepage
-  '/homepage2': {view: 'homepage2'},
+  '/': {view: 'homepage'}, 
+  /*'/homepage2': {view: 'homepage2'},*/
   'GET /signup' : {view: 'signup'},
   'POST /signup': 'UserController.create',
   'PUT /login'  : 'UserController.login',
   '/perfil' : 'PerfilController.perfil',
-  '/cubiculos' : {view: 'cubiculos'},
+  '/espacios' : {view: 'espacios'},
+  '/espacios/cubiculos' : {view: 'cubiculos'},
   
 
   /***************************************************************************

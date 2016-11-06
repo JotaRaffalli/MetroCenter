@@ -36,9 +36,10 @@ module.exports = {
       }
 
       return res.view('perfil', {
-        me: {
+        me: 
+        {
           id: user.id,
-          name: user.nombre,
+          nombre: user.nombre,
           email: user.email,
           apellido: user.apellido,
           carnet: user.carnet

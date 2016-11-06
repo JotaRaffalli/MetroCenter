@@ -11,7 +11,37 @@
 	<title>Cubículos</title>
 
 </head>
+<header > 
+    <nav class="navbar navbar-default navbar-inverse">      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+          <!-- Links -->
+          <ul class="nav navbar-nav" style="margin-left: 30px;" >
+            <li class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="/signup">Acerca de Nosotros</a></li>
+              <li><a href="/signup">Contáctanos</a></li>
+              <li><a href="/perfil">Perfil</a></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+      </nav>
+  </header>
 <body>
   <p>
     <h3 style="margin-left: 200px; margin-top: 75px; margin-bottom: 50px; ">

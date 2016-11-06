@@ -42,7 +42,7 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
 
       if (sailsResponse.status === 400 || 404) {
 
-          toastr.error('Email Incorrecto :c', 'Error', {
+          toastr.error('Email o carnet Incorrecto :c', 'Error', {
           closeButton: true
         });
         return;

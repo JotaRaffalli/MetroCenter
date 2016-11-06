@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>perfil</title>
+	<title>Perfil</title>
 	<!--STYLES-->
 	<link rel="stylesheet" href="/styles/angular-toastr.css">
 	<link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
@@ -14,16 +14,10 @@
       _csrf: '<%= _csrf %>',
       me: <%- JSON.stringify(me) %>
     };
-
-    // var u=me.toJSON();
     </script>
-
 </head>
-<body onload="alerta()">
-
-<!-- Crea la barra de navegacion -->
-        <nav class="navbar navbar-default navbar-inverse">
-      
+<header > 
+    <nav class="navbar navbar-default navbar-inverse">      
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
       
@@ -36,23 +30,47 @@
           <!-- Nombre de la app -->
           <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-          
-        </nav>
-         
-           <table ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil">
-                <thead>
-                    <tr>
-                        <th> Nombre : </th>
-                        <th> Apellido : </th>
-                        <th> Email : </th>
-                    </tr>
-                    <tr>
-                        <th>{{ usuarios.nombre }}</th>
-                        <th>{{ usuarios.apellido }}</th>
-                        <th>{{ usuarios.email }}</th>
-                    </tr>
-                </thead>
-            </table>               
+
+          <!-- Links -->
+          <ul class="nav navbar-nav" style="margin-left: 30px;" >
+            <li class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="/signup">Acerca de Nosotros</a></li>
+              <li><a href="/signup">Contáctanos</a></li>
+              <li><a href="/perfil">Perfil</a></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+      </nav>
+  </header>
+<body>
+
+<h2 style=" margin-left: 200px; margin-top:30px;">¡Hola <strong class="text-success"><%= me.nombre %></strong>!</h2>
+
+<p><h4 style=" margin-left: 200px; margin-top:20px;">Acá podras ver información relevante sobre tu perfil y modificar lo que desees :D</h4></p>
+
+<table class="table" style="width: 70%; margin-top:30px;" align="center">
+  <thead class="thead-inverse">
+        <tr>
+            <th> NOMBRE : </th>
+            <th> APELLIDO : </th>
+            <th> EMAIL : </th>
+            <th> CARNET : </th>
+        </tr>        
+  </thead>
+  <tbody>
+        <tr class="table-success">
+            <th><%= me.nombre %></th>
+            <th><%= me.apellido %></th>
+            <th><%= me.email %></th>
+            <th><%= me.carnet %></th>
+        </tr>
+  </tbody>
+</table>               
 <!--SCRIPTS-->
 <script src="/js/dependencies/sails.io.js"></script>
 <script src="/js/dependencies/angular.js"></script>
@@ -65,29 +83,6 @@
 <script src="/js/public/homepage/ControladorDeHomePage.js"></script>
 <script src="/js/public/signup/ControladorDeRegistro.js"></script>
 <!--SCRIPTS END-->
-
-<script>
-        //NO MODIFICAR
-
-        var app = angular.module('ModuloDePerfil', []);
-        
-        app.controller('ControladorDePerfil', function($scope, $http) {
-            
-          //$scope.usuarios = usuario;
-        
-           $http.get('/homepage/usuarios.json').success(function(data){
-           $scope.usuarios = data;
-     });
-
-        
-        });
-
-        function alerta () { }
-
-
-        
-    </script>
-
 
 </body>
 </html>
