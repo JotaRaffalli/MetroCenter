@@ -38,6 +38,7 @@ module.exports.routes = {
   'POST /signup': 'UserController.create',
   'PUT /login'  : 'UserController.login',
   '/perfil' : 'PerfilController.perfil',
+  '/perfil/modificar' : {view: 'modperfil'},
   '/espacios' : {view: 'espacios'},
   '/espacios/cubiculos' : {view: 'cubiculos'},
   

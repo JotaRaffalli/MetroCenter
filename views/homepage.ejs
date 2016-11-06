@@ -24,16 +24,22 @@
           </button>
 
           <!-- Nombre de la app -->
-          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-
+          <ul class="nav navbar-nav" style="padding-left: 250px">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li><a href="/espacios">Espacios</a></li> 
+            <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
+          </ul>
           <!-- ******************Simple Formulario de LogIn ****************** -->
           <!-- LOGIN FORM -->  
           <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
 
               <!-- EMAIL -->
               <div class="form-group">
-                  <input ng-model="loginForm.email" type="text" placeholder="Email / Carnet" name="email" class="form-control">
+                  <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
               </div>
 
               <!-- CONTRASEÑA -->
@@ -49,6 +55,7 @@
               </button>
               <input type="hidden" name="_csrf" value="<%= _csrf %>" />
           </form>
+          </div>
         </nav>
   </header>
 <body>

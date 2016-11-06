@@ -59,6 +59,16 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     });
   };
 
+  $scope.verificarLog = function(){
+    if (!req.session.me) 
+    {
+      toastr.warning('Primero tienes que iniciar sesión.', 'Warning', 
+      {
+      closeButton: true
+      });
+    }
+  }
+
   $scope.enviarAperfil = function() {
     $http({
       url: '/perfil',
@@ -76,6 +86,7 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
         });
       });
   };
+
 
 
 }]);
