@@ -4,13 +4,6 @@
 
 	<title>Perfil</title>
 
-	<!--STYLES-->
-	<link rel="stylesheet" href="/styles/angular-toastr.css">
-	<link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
-	<link rel="stylesheet" href="/styles/carrusel.css">
-	<link rel="stylesheet" href="/styles/importer.css">
-	<!--STYLES END-->
-
 <script type="text/javascript">
     window.SAILS_LOCALS = {
       _csrf: '<%= _csrf %>',
@@ -74,8 +67,11 @@
         </tr>
   </tbody>
 </table>  
+
+
 <h2 style=" margin-left: 200px; padding-top: 20px" > ¿Deseas Modificar algo? </h2>
-<form style="width: 85%; padding-top: 10px; padding-left: 200px;">
+
+<form ng-submit="enviarModificado()" style="width: 85%; padding-top: 10px; padding-left: 200px;">
   <div class="form-group">
     <label for="nombre">Nombre Completo</label>
     <input type="text" class="form-control" name="nombre" value="<%= me.nombre %>">
@@ -85,10 +81,6 @@
     <input type="text" class="form-control" name="apellido" value="<%= me.apellido %>">
   </div>
   <div class="form-group">
-    <label for="email">Correo Electrónico</label>
-    <input type="email" class="form-control" name="email" value="<%= me.email %>">
-  </div>
-  <div class="form-group">
     <label for="contraseña">Carnet</label>
     <input type="text" class="form-control" name="carnet" value="<%= me.carnet %>">
   </div>
@@ -96,20 +88,26 @@
   <button class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Modificar y Enviar </button>
   
 </form>
-
-
-<!--SCRIPTS-->
-<script src="/js/dependencies/sails.io.js"></script>
 <script src="/js/dependencies/angular.js"></script>
-<script src="/js/dependencies/jquery.js"></script>
-<script src="/js/dependencies/toastr.js"></script>
-<script src="/js/dependencies/compareTo.js"></script>
-<script src="/js/dependencies/bootstrap.js"></script>
-<script src="/js/public/signup/ModuloDeRegistro.js"></script>
-<script src="/js/public/homepage/ModuloHomePage.js"></script>
-<script src="/js/public/homepage/ControladorDeHomePage.js"></script>
-<script src="/js/public/signup/ControladorDeRegistro.js"></script>
-<!--SCRIPTS END-->
+  <script>
+    var app = angular.module("ModuloDePerfil", []);
+    app.controller("ControladorDePerfil", function($scope, $http) {
+      
+      $scope.enviarModificado = function () {
+      var dataObj = {
+        nombre : $scope.nombre.value,
+        apellido : $scope.apellido.value,
+        email : $scope.me.email,
+        carnet : $scope.carnet.value
+      };
 
+      $http.put('/perfil', dataObj )
+      .then(function onSuccess (response){
+      window.location = "/";
+      alert(response.nombre)
+      });
+  }
+});
+</script>
 </body>
 </html>

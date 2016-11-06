@@ -19,7 +19,7 @@ module.exports = {
       
       console.log(user.nombre);
 
-      req.session.me = user.id;   // returned from a database
+      req.session.me = user.id;   // Se guarda la sesión de un usuario
 
       return res.json(user);
 

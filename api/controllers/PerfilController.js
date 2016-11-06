@@ -49,5 +49,26 @@ module.exports = {
     });
   },
 
+  updatePerfil: function (req, res) {
+
+  var email = req.param('email');
+  var nombre = req.param('nombre');
+  var apellido = req.param('apellido');
+  var carnet = req.param('carnet');
+
+  User.update({email:email},{nombre:nombre,apellido:apellido,carnet:carnet}).exec(function afterwards(err, updated){
+
+    if (err) 
+    {
+      return res.json(500, { error: err });
+    }
+
+    console.log('Se actualizo el usuario' + updated[0].nombre);
+
+    return res.json(200);
+
+    });
+  }
+
 };
 
