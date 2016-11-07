@@ -43,7 +43,7 @@
           </div>
       </nav>
   </header>
-<body>
+<body ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
 
 <h2 style=" margin-left: 200px; margin-top:45px;">¡Hola <strong><%= me.nombre %></strong>!</h2>
 
@@ -75,17 +75,17 @@
 
   <div class="form-group">
     <label for="nombre">Nombre Completo</label>
-    <input ng-model="ModForm.nombre" type="text" class="form-control" name="nombre" value="<%= me.nombre %>">
+    <input ng-model="ModForm.nombre" type="text" class="form-control" name="nombre" placeholder="<%= me.nombre %>">
   </div>
 
    <div class="form-group">
     <label for="apellido">Apellido</label>
-    <input ng-model="ModForm.apellido" type="text" class="form-control" name="apellido" value="<%= me.apellido %>">
+    <input ng-model="ModForm.apellido" type="text" class="form-control" name="apellido" placeholder="<%= me.apellido %>">
   </div>
 
   <div class="form-group">
     <label for="contraseña">Carnet</label>
-    <input ng-model="ModForm.carnet" type="text" class="form-control" name="carnet" value="<%= me.carnet %>">
+    <input ng-model="ModForm.carnet" type="text" class="form-control" name="carnet" placeholder="<%= me.carnet %>">
   </div>
   
   <button type="submit" class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Modificar y Enviar </button>
@@ -102,12 +102,13 @@
       $scope.enviarModificado = function () {
       
       var dataObj = {
+        email: "raffallijoseluis@gmail.com",
         nombre : $scope.ModForm.nombre,
         apellido : $scope.ModForm.apellido,
-        email: $scope.ModForm.email,
         carnet : $scope.ModForm.carnet
       };
-                                    console.log($scope.ModForm.apellido);
+      console.log(dataObj);
+
       $http.post('/modificado', dataObj )
       .then(function onSuccess (){
         console.log("Hola exito");
@@ -116,7 +117,7 @@
 
       if (sailsResponse.status === 400 || 404) {
 
-        console.log("Error: no encontrado");
+        console.log(sailsResponse);
         return;
       }
         return;

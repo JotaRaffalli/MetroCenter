@@ -56,6 +56,8 @@ module.exports = {
   var apellido = req.param('apellido');
   var carnet = req.param('carnet');
 
+  console.log(email);
+
   User.update({email:email},{nombre:nombre,apellido:apellido,carnet:carnet}).exec(function afterwards(err, updated){
 
     if (err) 
