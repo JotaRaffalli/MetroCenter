@@ -24,7 +24,7 @@ module.exports = {
 
   	pagoCredito:{
   		type: 'boolean',
-  	}
+  	},
 
   	pagoDebito:{
   		type: 'boolean',
