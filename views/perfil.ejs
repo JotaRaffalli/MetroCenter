@@ -32,7 +32,7 @@
             <li class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">Página de Inicio</a></li>
+              <li><a href="/">Página de Inicio</a></li>
               <li><a href="/signup">Regístrate</a></li>
               <li><a href="/signup">Acerca de Nosotros</a></li>
               <li><a href="/signup">Contáctanos</a></li>
@@ -72,40 +72,56 @@
 <h2 style=" margin-left: 200px; padding-top: 20px" > ¿Deseas Modificar algo? </h2>
 
 <form ng-submit="enviarModificado()" style="width: 85%; padding-top: 10px; padding-left: 200px;">
+
   <div class="form-group">
     <label for="nombre">Nombre Completo</label>
-    <input type="text" class="form-control" name="nombre" value="<%= me.nombre %>">
+    <input ng-model="ModForm.nombre" type="text" class="form-control" name="nombre" value="<%= me.nombre %>">
   </div>
+
    <div class="form-group">
     <label for="apellido">Apellido</label>
-    <input type="text" class="form-control" name="apellido" value="<%= me.apellido %>">
+    <input ng-model="ModForm.apellido" type="text" class="form-control" name="apellido" value="<%= me.apellido %>">
   </div>
+
   <div class="form-group">
     <label for="contraseña">Carnet</label>
-    <input type="text" class="form-control" name="carnet" value="<%= me.carnet %>">
+    <input ng-model="ModForm.carnet" type="text" class="form-control" name="carnet" value="<%= me.carnet %>">
   </div>
   
-  <button class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Modificar y Enviar </button>
+  <button type="submit" class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Modificar y Enviar </button>
   
 </form>
-<script src="/js/dependencies/angular.js"></script>
+
+
+
+  <script src="/js/dependencies/angular.js"></script>
   <script>
     var app = angular.module("ModuloDePerfil", []);
     app.controller("ControladorDePerfil", function($scope, $http) {
       
       $scope.enviarModificado = function () {
+      
       var dataObj = {
-        nombre : $scope.nombre.value,
-        apellido : $scope.apellido.value,
-        email : $scope.me.email,
-        carnet : $scope.carnet.value
+        nombre : $scope.ModForm.nombre,
+        apellido : $scope.ModForm.apellido,
+        email: $scope.ModForm.email,
+        carnet : $scope.ModForm.carnet
       };
+                                    console.log($scope.ModForm.apellido);
+      $http.post('/modificado', dataObj )
+      .then(function onSuccess (){
+        console.log("Hola exito");
+      })
+      .catch(function onError(sailsResponse) {
 
-      $http.put('/perfil', dataObj )
-      .then(function onSuccess (response){
-      window.location = "/";
-      alert(response.nombre)
-      });
+      if (sailsResponse.status === 400 || 404) {
+
+        console.log("Error: no encontrado");
+        return;
+      }
+        return;
+
+    });
   }
 });
 </script>

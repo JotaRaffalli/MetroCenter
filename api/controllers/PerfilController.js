@@ -60,12 +60,12 @@ module.exports = {
 
     if (err) 
     {
-      return res.json(500, { error: err });
+      return res.negotiate(err);
     }
 
     console.log('Se actualizo el usuario' + updated[0].nombre);
 
-    return res.json(200);
+    return res.view('homepage');
 
     });
   }
