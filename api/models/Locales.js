@@ -9,6 +9,27 @@ module.exports = {
 
   attributes: {
 
-  }
+  	nombre:{
+  		type: 'string',
+  		required: true,
+  	},
+
+  	menu: {
+  		type: 'text',
+  	},
+
+  	horario:{
+  		type: 'text',
+  	},
+
+  	pagoCredito:{
+  		type: 'boolean',
+  	}
+
+  	pagoDebito:{
+  		type: 'boolean',
+  	},
+
+  },
 };
 
