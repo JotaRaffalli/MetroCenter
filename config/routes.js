@@ -42,7 +42,7 @@ module.exports.routes = {
   '/espacios' : {view: 'espacios'},
   '/espacios/cubiculos' : {view: 'cubiculos'},
   '/locales' : {view: 'locales'},
-  
+  '/informacion' : {view: 'informacion'},
 
   /***************************************************************************
   *                                                                          *

@@ -46,7 +46,7 @@
           </div>
       </nav>
   </header>
-<body>
+<body ng-app="ModuloLocales" ng-controller="ControladorDeLocales" ng-cloak>
 		<div id="content" class="container">
 			<div class="row margin-top-30">
 				<div class="col-md-12 text-center">
@@ -86,7 +86,7 @@
 					<div class="row">
 						
 						<!-- Local 1 -->
-						<div class="portfolio-item col-md-6 code">
+						<div id='{{local}}' class="portfolio-item col-md-6 code">
 							<div class="image-hover">
 								<a href="#">
 									<figure>
@@ -98,7 +98,7 @@
 									<h3 class="margin-top-20">City Picnic</h3>
 									<p class="margin-top-10">¡Ofrece desayunos como empanadas, pastelitos y tequeños; almuerzos variados y más!</p>
 									<div class="btn btn-default">
-									<a class="info" href="http://localhost/build/substance/index.php/quam-nunc-putamus">Info Aquí</a>
+									<a class="info" ng-click="BuscarLocal()" href="/informacion">Info Aquí</a>
 									</div>
 								</a>
 							</div>
@@ -330,4 +330,9 @@
 		</div>
 
 </body>
+
+<script type="text/javascript">
+	
+	
+</script>
 </html>
