@@ -41,6 +41,7 @@ module.exports.routes = {
   '/perfil' : 'PerfilController.perfil',
   '/espacios' : {view: 'espacios'},
   '/espacios/cubiculos' : {view: 'cubiculos'},
+  '/locales' : {view: 'locales'},
   
 
   /***************************************************************************
