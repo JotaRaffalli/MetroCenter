@@ -9,10 +9,27 @@
 
 	<title>MetroCenter Home</title>
 
-	
+	<style>
+
+  .img-circle 
+  {
+    box-shadow: 0 0 0 4px rgba(255,255,255,1);
+    transition: background 0.2s, color 0.2s;  
+  }
+  .img-circle:hover
+  {
+    background: rgba(255,255,255,1);
+    background-color: #F47F30;
+    color: #64bb5d;
+  }
+
+  </style>
+
 </head>
+
+<body>
 <header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
-    <nav class="navbar navbar-default navbar-inverse">
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
       
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
@@ -58,10 +75,9 @@
           </div>
         </nav>
   </header>
-<body>
 	 <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div style="margin-top:-20px;" id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -70,7 +86,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="/images/prueba1.jpg">
+          <img class="first-slide" src="/images/prueba1borrosa.jpg">
           <div class="container">
             <div class="carousel-caption">
               <h1>Bienvenido a Metro Center!</h1>
@@ -115,31 +131,30 @@
     <!-- ================================================== -->
     
 
-    <div class="container marketing">
+    <div style="margin-top:-20px;" class="container marketing">
 
-      <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="/images/breakfast_delicious_dinner_eat_food_fork_fun_holiday_knife_plate-512.png" width="140" height="140">
+          <a href=""><img class="img-circle" src="/images/breakfast_delicious_dinner_eat_food_fork_fun_holiday_knife_plate-512.png" width="140" height="140"></a>
           <h2>Locales</h2>
           <p>Ver aquí locales (modicar xfa).</p>
           <p><a class="btn btn-default" href="#" role="button">Ver Detalles &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- Columna -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/office-icons-free-stock-vector-set--no-cost-royalty-free-stock-27.jpg" width="140" height="140">
+          <a href=""><img class="img-circle" src="images/LibroPng.png" width="130" height="130"></a>
           <h2>Catálogo de ventas</h2>
           <p>Aprovecha y compra todos los materiales que necesites aqui. Equipate ya! (modicar xfa).</p>
           <p><a class="btn btn-default" href="#" role="button">Ver Detalles &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div><!-- Columna -->
         <div class="col-lg-4">
-          <img class="img-circle" src="/images/tree-9-xxl.png" width="140" height="140">
+          <a href="/espacios"><img class="img-circle" src="/images/tree-9-xxl.png" width="140" height="140"></a>
           <h2>Ver Espacios</h2>
           <p>Ve los espacios espacios de la universidad metropolitana y su disponibilidad. Ve ahora mismo los cubiculos disponibles para que aproveches y estudies con tus amigos. (modicar xfa).</p>
           <p><a class="btn btn-default" href="/espacios" role="button">Ver Detalles &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+        </div><!-- Columna -->
+      </div>
 
-      <hr class="featurette-divider">
+      <hr style="margin-top:-30px;" class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
@@ -152,7 +167,7 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr style="margin-top:-30px;" class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
@@ -164,7 +179,7 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr style="margin-top:-30px;" class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
