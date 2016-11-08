@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {view: 'homepage'}, 
   /*'/homepage2': {view: 'homepage2'},*/
-  'GET /signup' : {view: 'signup', },
+  'GET /signup' : {view: 'signup' },
   'POST /signup': 'UserController.create',
   'PUT /login'  : 'UserController.login',
   'POST /modificado': 'PerfilController.updatePerfil',
