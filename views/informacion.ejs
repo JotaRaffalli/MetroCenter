@@ -2,9 +2,17 @@
 <html>
 <head>
 	<title>Información</title>
+	
+	<script type="text/javascript">
+	    window.SAILS_LOCALS = {
+	      _csrf: '<%= _csrf %>',
+	      lcl: <%- JSON.stringify(lcl) %>
+	    };
+	</script>
+
 </head>
 <body>
-<h1> <%= local.nombre %> </h1>
+<h1> <%= lcl.nombre %> </h1>
 
 </body>
 </html>
