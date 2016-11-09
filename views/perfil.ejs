@@ -72,7 +72,6 @@
 <h2 style=" margin-left: 200px; padding-top: 20px" > ¿Deseas Modificar algo? </h2>
 
 <form ng-submit="enviarModificado()" style="width: 85%; padding-top: 10px; padding-left: 200px;">
-
   <div class="form-group">
     <label for="nombre">Nombre Completo</label>
     <input ng-model="ModForm.nombre" type="text" class="form-control" name="nombre" placeholder="<%= me.nombre %>">
@@ -90,19 +89,27 @@
   
   <button type="submit" class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Modificar y Enviar </button>
   
+  <input type="hidden" id="ModForm.email" value="<%= me.email %>">
+
 </form>
 
 
 
   <script src="/js/dependencies/angular.js"></script>
   <script>
+    var PK = document.getElementById("ModForm.email").value;
+
     var app = angular.module("ModuloDePerfil", []);
     app.controller("ControladorDePerfil", function($scope, $http) {
       
       $scope.enviarModificado = function () {
       
+      
+
+      console.log($scope.PK);
+
       var dataObj = {
-        email: "raffallijoseluis@gmail.com",
+        email: PK  ,
         nombre : $scope.ModForm.nombre,
         apellido : $scope.ModForm.apellido,
         carnet : $scope.ModForm.carnet
