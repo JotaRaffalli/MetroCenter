@@ -12,6 +12,8 @@ module.exports = {
 
 			if(err) return next(err);
 			if(!local) return next();
+			console.log(local.pagoDebito);
+
 			res.view('informacion', {
 				lcl: {
 		          id: local.id,
@@ -19,7 +21,7 @@ module.exports = {
 		          menu: local.menu,
 		          horario: local.horario,
 		          pagoCredito: local.pagoCredito,
-		          pagoDebtio: local.pagoDebtio
+		          pagoDebito: local.pagoDebito
 		        }
 			});
 		});
