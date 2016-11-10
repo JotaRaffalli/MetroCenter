@@ -9,22 +9,6 @@
 
   <title>MetroCenter - Auditorios</title>
 
-  <style>
-
-  .img-circle 
-  {
-    box-shadow: 0 0 0 4px rgba(255,255,255,1);
-    transition: background 0.2s, color 0.2s;  
-  }
-  .img-circle:hover
-  {
-    background: rgba(255,255,255,1);
-    background-color: #F47F30;
-    color: #64bb5d;
-  }
-
-  </style>
-
 </head>
 
 <body>
@@ -44,10 +28,10 @@
           <a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
           <ul class="nav navbar-nav" style="padding-left: 250px">
-            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/commerce">Tienda</a></li>
             <li><a href="/locales">Locales</a></li> 
-            <li><a href="/espacios">Espacios</a></li> 
+            <li class="active"><a href="/espacios">Espacios</a></li> 
             <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
           </ul>
           <!-- ******************Simple Formulario de LogIn ****************** -->
@@ -65,7 +49,7 @@
               </div>
 
               <!-- SUBMIT -->
-              <button type="submit" class="btn btn-success">
+              <button style="margin-top: -3px;" type="submit" class="btn btn-success">
                 <span ng-show="!loginForm.loading">Entrar</span>
                 <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
                 <span ng-show="loginForm.loading">Entrando...</span>
