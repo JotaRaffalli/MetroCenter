@@ -124,6 +124,7 @@
       $http.post('/modificado', dataObj )
       .then(function onSuccess (){
       console.log("Hola exito");
+      window.location='/perfil';
       })
       .catch(function onError(sailsResponse) {
 
