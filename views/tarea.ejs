@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vista de Auditorios">
-  <meta name="author" content="Metro center Asher Kleiman">
+	<title>Tarea 2</title>
 
-  <title>MetroCenter - Auditorios</title>
-
-<<<<<<< HEAD
-
-  <style>
-
-  .img-circle 
-  {
-    box-shadow: 0 0 0 4px rgba(255,255,255,1);
-    transition: background 0.2s, color 0.2s;  
-  }
-  .img-circle:hover
-  {
-    background: rgba(255,255,255,1);
-    background-color: #F47F30;
-    color: #64bb5d;
-  }
-
-  </style>
-
-=======
->>>>>>> origin/master
+	<link rel="stylesheet" type="text/css" href="/styles/tarea.css">
 </head>
-
 <body>
+
 <header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
     <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
       
@@ -51,7 +26,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/commerce">Tienda</a></li>
             <li><a href="/locales">Locales</a></li> 
-            <li class="active"><a href="/espacios">Espacios</a></li> 
+            <li><a href="/espacios">Espacios</a></li> 
             <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
           </ul>
           <!-- ******************Simple Formulario de LogIn ****************** -->
@@ -69,7 +44,7 @@
               </div>
 
               <!-- SUBMIT -->
-              <button style="margin-top: -3px;" type="submit" class="btn btn-success">
+              <button style="margin-top: -3px;" type="submit" class="btn btn-primary">
                 <span ng-show="!loginForm.loading">Entrar</span>
                 <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
                 <span ng-show="loginForm.loading">Entrando...</span>
@@ -79,18 +54,20 @@
           </div>
         </nav>
   </header>
-  <div><h1 align="center">AUDITORIOS</h1></div>
-  <div class="list-group">
-      <% audi.forEach(function(auditorio)  { %>
-         <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="list-group-item-heading"><%- auditorio.nombre %></h5>
-            <p class="list-group-item-text"><%- auditorio.localizacion %></p>
-        </a>
-      <% }); %>
-  </div>
-  
+
+<h1 style="font-size: 2.5em;margin-top: 35px" align="center" >Tarea Número 2</h1>
+<h2 style="font-size: 1.8em; color: #8b8b8b; margin: 20px;" align="center" >Selecciona un Botón para ver los resultados de la consulta a Sakila.</h2>
+
+<div style="margin: 10px;" align="center"><img src="http://comolopuedohacer.com/wp-content/uploads/2016/06/1_mod-tareas.png" height="200" width="150" ></div>
+
+<div align="center">
+
+	<a href="#" class="btn btn-lg btn-query"><span class="glyphicon glyphicon-play"></span> Query #1</a>
+	<a href="#" class="btn btn-lg btn-query"><span class="glyphicon glyphicon-play"></span> Query #2</a>
+	<a href="#" class="btn btn-lg btn-query"><span class="glyphicon glyphicon-play"></span> Query #3</a>
+	<a href="#" class="btn btn-lg btn-query"><span class="glyphicon glyphicon-play"></span> Query #4</a>
+</div>
+
+
 </body>
 </html>
-
-
-

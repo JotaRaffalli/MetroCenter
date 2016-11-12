@@ -5,6 +5,7 @@
 	<title>Perfil</title>
 
 <script type="text/javascript">
+    var PK;
     window.SAILS_LOCALS = {
       _csrf: '<%= _csrf %>',
       me: <%- JSON.stringify(me) %>
@@ -43,7 +44,7 @@
           </div>
       </nav>
   </header>
-<body ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
+<body onload="alCargar();" ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
 
 <h2 style=" margin-left: 200px; margin-top:45px;">¡Hola <strong><%= me.nombre %></strong>!</h2>
 
@@ -86,10 +87,12 @@
     <label for="contraseña">Carnet</label>
     <input ng-model="ModForm.carnet" type="text" class="form-control" name="carnet" placeholder="<%= me.carnet %>">
   </div>
+
+  <input type="hidden"  value="<%= me.email %>" id="ModForm.email">
+
+  <button type="submit" class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Actualizar Datos </button>
   
-  <button type="submit" class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Modificar y Enviar </button>
   
-  <input type="hidden" id="ModForm.email" value="<%= me.email %>">
 
 </form>
 
@@ -97,28 +100,31 @@
 
   <script src="/js/dependencies/angular.js"></script>
   <script>
-    var PK = document.getElementById("ModForm.email").value;
+  
+  function alCargar(){
+    PK = document.getElementById("ModForm.email").value;
+  }
 
     var app = angular.module("ModuloDePerfil", []);
     app.controller("ControladorDePerfil", function($scope, $http) {
       
       $scope.enviarModificado = function () {
       
-      
+      $scope.PK= PK;
 
-      console.log($scope.PK);
 
       var dataObj = {
-        email: PK  ,
+        email:  $scope.PK  ,
         nombre : $scope.ModForm.nombre,
         apellido : $scope.ModForm.apellido,
         carnet : $scope.ModForm.carnet
       };
-      console.log(dataObj);
+      
 
       $http.post('/modificado', dataObj )
       .then(function onSuccess (){
-        console.log("Hola exito");
+      console.log("Hola exito");
+      window.location='/perfil';
       })
       .catch(function onError(sailsResponse) {
 
