@@ -7,5 +7,17 @@
 
 module.exports = {
 	
+
+	CargarCubiculos: function (req,res){
+		Cubiculos.find().exec(function(err, cubiculos)
+		{
+			if(err) return res.negotiate(err);
+			if(!cubiculos) return res.notFound();
+
+			res.view('cubiculos', {
+				TablaCubiculos: cubiculos
+			});
+		});
+	},
 };
 

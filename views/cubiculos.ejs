@@ -11,8 +11,9 @@
 	<title>Cubículos</title>
 
 </head>
-<header > 
-    <nav class="navbar navbar-default navbar-inverse">      
+<header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
+      
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
       
@@ -23,25 +24,18 @@
           </button>
 
           <!-- Nombre de la app -->
-          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div ><a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png"></a></div>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          <ul class="nav navbar-nav" style="padding-left: 250px">
 
-          <!-- Links -->
-          <ul class="nav navbar-nav" style="margin-left: 30px;" >
-            <li class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Página de Inicio</a></li>
-              <li><a href="/signup">Regístrate</a></li>
-              <li><a href="/signup">Acerca de Nosotros</a></li>
-              <li><a href="/signup">Contáctanos</a></li>
-              <li><a href="/perfil">Perfil</a></li>
-              </ul>
-            </li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li  class="active"><a href="/espacios">Espacios</a></li> 
           </ul>
           </div>
-      </nav>
-  </header>
+        </nav>
+</header>
 <body>
   <p>
     <h3 style="margin-left: 200px; margin-top: 75px; margin-bottom: 50px; ">
@@ -56,36 +50,18 @@
   <thead>
     <tr>
       <th>Número</th>
-      <th>Disponinilidad</th>
+      <th>Disponibilidad</th>
       <th>Hora de Entrada</th>
-      <th>Hora de Salida</th>
     </tr>
   </thead>
   <tbody>
+  <% TablaCubiculos.forEach(function(cubiculo)  { %>
     <tr>
-      <th scope="row">1</th>
-      <td>Disponible</td>
-      <td>10:30</td>
-      <td>12:00</td>
+      <th scope="row"><%= cubiculo.id %></th>
+      <td><%= cubiculo.disponibilidad %></td>
+      <td><%= cubiculo.hora_salida %></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+  <% }); %>
   </tbody>
 </table>
 

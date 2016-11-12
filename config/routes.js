@@ -40,15 +40,12 @@ module.exports.routes = {
   'POST /modificado': 'PerfilController.updatePerfil',
   '/perfil' : 'PerfilController.perfil',
   '/espacios' : {view: 'espacios'},
-  '/espacios/cubiculos' : {view: 'cubiculos'},
+  '/espacios/cubiculos' : 'CubiculosController.CargarCubiculos',
   '/locales' : {view: 'locales'},
   '/informacion/*' : 'LocalesController.informacion',
-<<<<<<< HEAD
   '/auditorios' : 'AuditoriosController.auditorios',
-=======
-  '/auditorios' : {view: 'auditorios'},
   '/tarea' : {view: 'tarea'},
->>>>>>> origin/master
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
