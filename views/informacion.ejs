@@ -64,9 +64,19 @@
 		<div class="clearfix"></div>
 		<div class="blog-post-body row margin-top-30">
 			<div class="col-md-5">
-				<img class="pull-left" src="/images/juicebar.jpg" alt="juicebar">
+				<%if (lcl.id==1) {%>  <img class="pull-left" src="/images/citypicnic.jpg" alt="citypicnic">  <%}%>
+				<%if (lcl.id==2) {%>  <img class="pull-left" src="/images/barra2.jpg" alt="barra2">  <%}%>
+				<%if (lcl.id==3) {%>  <img class="pull-left" src="/images/subway.jpg" alt="subway">  <%}%>
+				<%if (lcl.id==4) {%>  <img class="pull-left" src="/images/tienda.jpg" alt="tienda">  <%}%>
+				<%if (lcl.id==5) {%>  <img class="pull-left" src="/images/mipuntogrill.jpg" alt="mipuntogrill">  <%}%>
+				<%if (lcl.id==6) {%>  <img class="pull-left" src="/images/peperonnis.jpg" alt="peperonnis">  <%}%>
+				<%if (lcl.id==7) {%>  <img class="pull-left" src="/images/juicebar2.jpg" alt="juicebar2">  <%}%>	
+				<%if (lcl.id==8) {%>  <img class="pull-left" src="/images/delipernil.jpg" alt="delipernil">  <%}%>
+				<%if (lcl.id==9) {%>  <img class="pull-left" src="/images/pinchopan.jpg" alt="pinchopan">  <%}%>
+				<%if (lcl.id==10) {%>  <img class="pull-left" src="/images/chipacookie.jpg" alt="chipacookie">  <%}%>
+				<%if (lcl.id==11) {%>  <img class="pull-left" src="/images/delisabores.jpg" alt="delisabores">  <%}%>
+				<%if (lcl.id==12) {%>  <img class="pull-left" src="/images/metromix.jpg" alt="metromix">  <%}%>
 			</div>
-
 			<div class="col-md-5">
 				<h2>Menú</h2>
 				<p class='lead'><%= lcl.menu %></p>
@@ -74,7 +84,7 @@
 				<p class='lead'><%= lcl.horario %></p>
 				<h2>Métodos de Pago</h2>
 				<p class='lead'>Crédito: <%= lcl.pagoCredito %></p>
-				<p class='lead'>Débito: <%= lcl.pagoDebito %></p>				
+				<p class='lead'>Débito: <%= lcl.pagoDebito %></p>
 			</div>
 		</div>
 	</div>
