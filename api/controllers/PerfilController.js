@@ -65,9 +65,9 @@ module.exports = {
       return res.negotiate(err);
     }
 
-    console.log('Se actualizo el usuario' + updated[0].nombre);
+    console.log('Se actualizo el usuario ' + updated[0].nombre);
 
-    return res.view('homepage');
+    return res.view('perfil');
 
     });
   }

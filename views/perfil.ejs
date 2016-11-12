@@ -13,8 +13,9 @@
 </script>
 
 </head>
-<header > 
-    <nav class="navbar navbar-default navbar-inverse">      
+<header> 
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
+      
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
       
@@ -25,25 +26,19 @@
           </button>
 
           <!-- Nombre de la app -->
-          <a class="navbar-brand" href="/#"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div ><a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png"></a></div>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          <ul class="nav navbar-nav" style="padding-left: 250px">
 
-          <!-- Links -->
-          <ul class="nav navbar-nav" style="margin-left: 30px;" >
-            <li class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Páginas<span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="/">Página de Inicio</a></li>
-              <li><a href="/signup">Regístrate</a></li>
-              <li><a href="/signup">Acerca de Nosotros</a></li>
-              <li><a href="/signup">Contáctanos</a></li>
-              <li><a href="/perfil">Perfil</a></li>
-              </ul>
-            </li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li><a href="/espacios">Espacios</a></li>
+            <li class="active"><a href="/perfil">Perfil</a></li> 
           </ul>
           </div>
-      </nav>
-  </header>
+        </nav>
+</header>
 <body onload="alCargar();" ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
 
 <h2 style=" margin-left: 200px; margin-top:45px;">¡Hola <strong><%= me.nombre %></strong>!</h2>
@@ -90,7 +85,7 @@
 
   <input type="hidden"  value="<%= me.email %>" id="ModForm.email">
 
-  <button type="submit" class="btn btn-block btn-primary";><span class="glyphicon glyphicon-pencil"></span> Actualizar Datos </button>
+  <button type="submit"  class="btn btn-block btn-primary" ><span class="glyphicon glyphicon-pencil"></span> Actualizar Datos </button>
   
   
 

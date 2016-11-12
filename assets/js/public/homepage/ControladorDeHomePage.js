@@ -60,13 +60,17 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
   };
 
   $scope.verificarLog = function(){
-    if (!req.session.me) 
-    {
-      toastr.warning('Primero tienes que iniciar sesión.', 'Warning', 
-      {
-      closeButton: true
-      });
-    }
+    // if (req.session.me == null) 
+    // {
+    //   toastr.warning('Primero tienes que iniciar sesión.', 'Warning', 
+    //   {
+    //   closeButton: true
+    //   });
+    // }
+    // else
+    // {
+    //   window.location= ''
+    // }
   }
 
   $scope.enviarAperfil = function() {
