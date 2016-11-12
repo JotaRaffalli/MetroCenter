@@ -1,0 +1,45 @@
+.btn-query { 
+	  color: #ffffff; 
+	  background-color: #F74545; 
+	  border-color: #F78345; 
+	} 
+	 
+	.btn-query:hover, 
+	.btn-query:focus, 
+	.btn-query:active, 
+	.btn-query.active, 
+	.open .dropdown-toggle.btn-query { 
+	  color: #ffffff; 
+	  background-color: #DB2121; 
+	  border-color: #F78345; 
+	} 
+	 
+	.btn-query:active, 
+	.btn-query.active, 
+	.open .dropdown-toggle.btn-query { 
+	  background-image: none; 
+	} 
+	 
+	.btn-query.disabled, 
+	.btn-query[disabled], 
+	fieldset[disabled] .btn-query, 
+	.btn-query.disabled:hover, 
+	.btn-query[disabled]:hover, 
+	fieldset[disabled] .btn-query:hover, 
+	.btn-query.disabled:focus, 
+	.btn-query[disabled]:focus, 
+	fieldset[disabled] .btn-query:focus, 
+	.btn-query.disabled:active, 
+	.btn-query[disabled]:active, 
+	fieldset[disabled] .btn-query:active, 
+	.btn-query.disabled.active, 
+	.btn-query[disabled].active, 
+	fieldset[disabled] .btn-query.active { 
+	  background-color: #F74545; 
+	  border-color: #F78345; 
+	} 
+	 
+	.btn-query .badge { 
+	  color: #F74545; 
+	  background-color: #ffffff; 
+	}
