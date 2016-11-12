@@ -43,7 +43,7 @@ module.exports.routes = {
   '/espacios/cubiculos' : {view: 'cubiculos'},
   '/locales' : {view: 'locales'},
   '/informacion/*' : 'LocalesController.informacion',
-  '/auditorios' : {view: 'auditorios'},
+  '/auditorios' : 'AuditoriosController.auditorios',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

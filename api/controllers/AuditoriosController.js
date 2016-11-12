@@ -7,13 +7,14 @@
 
 module.exports = {
 	
-	auditorios: function (res,req,next){
+	auditorios: function (req,res){
 		Auditorios.find().exec(function(err, auditorios){
-			if(err) next(err);
 
-			res.view('/views/espacios/auditorios');
-
+			res.view('auditorios', {
+				audi: auditorios
+			});
 		});
 	},
 };
 
+ 

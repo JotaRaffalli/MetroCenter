@@ -5,9 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Vista de Auditorios">
-  <meta name="author" content="Metro Center-Jose Raffalli">
+  <meta name="author" content="Metro center Asher Kleiman">
 
   <title>MetroCenter - Auditorios</title>
+
 
   <style>
 
@@ -77,18 +78,12 @@
   </header>
   <div><h1 align="center">AUDITORIOS</h1></div>
   <div class="list-group">
-    <a href="#1" class="list-group-item list-group-item-action">
-      <h5 class="list-group-item-heading">Auditorio1</h5>
-      <p class="list-group-item-text">Breve descripcion del espacio.</p>
-    </a>
-    <a href="#2" class="list-group-item list-group-item-action">
-      <h5 class="list-group-item-heading">Auditorio2</h5>
-      <p class="list-group-item-text">Breve descripcion del espacio.</p>
-    </a>
-    <a href="#3" class="list-group-item list-group-item-action">
-      <h5 class="list-group-item-heading">Auditorio3</h5>
-      <p class="list-group-item-text">Breve descripcion del espacio.</p>
-    </a>
+      <% audi.forEach(function(auditorio)  { %>
+         <a href="#" class="list-group-item list-group-item-action">
+            <h5 class="list-group-item-heading"><%- auditorio.nombre %></h5>
+            <p class="list-group-item-text"><%- auditorio.localizacion %></p>
+        </a>
+      <% }); %>
   </div>
   
 </body>
