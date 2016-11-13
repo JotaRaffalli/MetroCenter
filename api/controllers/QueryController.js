@@ -16,7 +16,7 @@ module.exports = {
   	if (req.param('queryId') == 1) {}
   		else if (req.param('queryId') == 2) {}
   			else if (req.param('queryId') == 3) {}
-  				else if (req.param('queryId') == 4) }
+  				else if (req.param('queryId') == 4) {}
   					else if (req.param('queryId') == 5) {}
   }
 };
