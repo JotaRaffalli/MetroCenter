@@ -13,7 +13,9 @@
 </script>
 
 </head>
-<header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
+
+<body onload="alCargar();" ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
+<header> 
     <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
       
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
@@ -38,8 +40,6 @@
           </ul>
         </nav>
   </header>
-<body onload="alCargar();" ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
-
 <h2 style=" margin-left: 200px; margin-top:45px;">¡Hola <strong><%= me.nombre %></strong>!</h2>
 
 <p><h4 style=" margin-left: 200px; margin-top:20px;">Acá podras ver información relevante sobre tu perfil y modificar lo que desees :D</h4></p>

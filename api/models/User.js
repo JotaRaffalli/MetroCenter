@@ -6,7 +6,8 @@
  */
 
 module.exports = {
-
+  
+  connection: 'MetroCenterMysqlServer',
   attributes: {
 
   	

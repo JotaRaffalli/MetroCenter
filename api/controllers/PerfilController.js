@@ -67,7 +67,7 @@ module.exports = {
 
     console.log('Se actualizo el usuario ' + updated[0].nombre);
 
-    return res.view('perfil');
+    return res.view('homepage');
 
     });
   }

@@ -46,7 +46,16 @@ module.exports.connections = {
     user: 'metro_center_db', //optional
     password: 'holdthedoor', //optional
     database: 'metro_center_db' //optional
-  }
+  },
+
+  Sakila : {
+    adapter: 'sails-mysql',
+    host: 'localhost',
+    user: 'root', //optionala
+    database: 'sakila' //optional
+  },
+
+
 
   /***************************************************************************
   *                                                                          *
