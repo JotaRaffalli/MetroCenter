@@ -16,6 +16,10 @@ module.exports = {
 
   	hora_salida : {
   		type: 'time'
+  	},
+
+  	hora_entrada : {
+  		type: 'time'
   	}
 
   }

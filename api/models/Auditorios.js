@@ -15,9 +15,12 @@ module.exports = {
   	},
 
   	localizacion : {
-  		type: 'string',
-  		required: true,
-  	}
+  		type: 'string'
+  	},
+
+    evento : {
+      type: 'string'
+    },
   }
 };
 

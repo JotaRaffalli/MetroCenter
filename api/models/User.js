@@ -35,10 +35,10 @@ module.exports = {
     },
 
   	contraseñaEncriptada : {
-
   		type : 'string',
+  	},
 
-  	}
+    
   }
 };
 

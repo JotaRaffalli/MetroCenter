@@ -36,29 +36,6 @@
              <li><a href="/espacios">Estacionamiento</a></li> 
             <li class="active"><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
           </ul>
-          <!-- ******************Simple Formulario de LogIn ****************** -->
-          <!-- LOGIN FORM -->  
-          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
-
-              <!-- EMAIL -->
-              <div class="form-group">
-                  <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
-              </div>
-
-              <!-- CONTRASEÑA -->
-              <div class="form-group">
-                  <input ng-model="loginForm.password" type="password" placeholder="Contraseña" name="password" class="form-control">
-              </div>
-
-              <!-- SUBMIT -->
-              <button style="margin-top: -3px;" type="submit" class="btn btn-primary">
-                <span ng-show="!loginForm.loading">Entrar</span>
-                <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-                <span ng-show="loginForm.loading">Entrando...</span>
-              </button>
-              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-          </form>
-          </div>
         </nav>
   </header>
 <body onload="alCargar();" ng-app="ModuloDePerfil" ng-controller="ControladorDePerfil" >
