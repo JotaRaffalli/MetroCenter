@@ -12,12 +12,24 @@ module.exports = {
   /**
    * `QueryController.consulta()`
    */
-  consulta: function (req, res) {
-  	if (req.param('queryId') == 1) {}
-  		else if (req.param('queryId') == 2) {}
-  			else if (req.param('queryId') == 3) {}
-  				else if (req.param('queryId') == 4) {}
-  					else if (req.param('queryId') == 5) {}
-  }
+  query1: function (req, res) {
+    
+  },
+
+  query2: function (req, res){
+
+  },
+
+  query3: function (req, res){
+
+  },
+
+  query4: function (req, res){
+
+  },
+
+  query5: function (req, res){
+
+  },
 };
 

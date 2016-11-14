@@ -45,7 +45,7 @@ module.exports.routes = {
   '/informacion/*' : 'LocalesController.informacion',
   '/auditorios' : 'AuditoriosController.auditorios',
   '/tarea' : {view: 'tarea'},
-  '/tarea/query/*' : {view: 'query'},
+  '/tarea/*' : {view: 'query'},
 
   /***************************************************************************
   *                                                                          *
