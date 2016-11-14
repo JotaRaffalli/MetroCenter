@@ -37,7 +37,7 @@ module.exports = {
     cedula : {
       type: 'string',
       required: true,
-      unique: true
+      unique: true,
     },
 
     direccion: {
@@ -48,8 +48,8 @@ module.exports = {
     nivelDeAcceso: {
       type: 'integer',
       required: true,
-      unique: true
-    }
+      unique: true,
+    },
 
   	contraseñaEncriptada : {
   		type : 'string',
