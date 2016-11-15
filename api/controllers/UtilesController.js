@@ -33,9 +33,11 @@ module.exports = {
 				});
 
 				CompraUtiles.create({idutiles: id, iduser: req.session.me}).exec(function afterwards(err, compra){
-					console.log(compra);
+				if(err) return next(err);
+				if(!compra) return next();
+
 					res.view('tienda');
-				})
+				});
 			});
 	}
 

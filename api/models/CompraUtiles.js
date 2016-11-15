@@ -9,11 +9,11 @@ module.exports = {
 
   attributes: {
   	idutiles:{
-  		type: 'integer',
+  		type: 'string',
   		required: true,
   	},
   	iduser: {
-  		type: 'integer',
+  		type: 'string',
   		required: true,
   	},
   	entrega: {
