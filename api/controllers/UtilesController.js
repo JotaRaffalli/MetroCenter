@@ -6,6 +6,14 @@
  */
 
 module.exports = {
-	
+		
+		tiendaSingular: function (req,res){
+		Utiles.find().exec(function(err, utiles){
+
+			res.view('singular', {
+				util: utiles
+			});
+		});
+	},
 };
 
