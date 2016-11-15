@@ -77,10 +77,13 @@ module.exports = {
   compras_recientes: function (req, res) 
   {
 
-  User.query('SELECT utiles.nombre as Nombre, utiles.precio as Precio FROM user inner join comprautiles on comprautiles.idusuarios = usuario.idusuario inner join utiles on comprautiles.idutiles = utiles.idutiles order by comprautiles.createdAt', function(err, results) {
+  User.query('SELECT utiles.nombre, utiles.precio FROM user inner join comprautiles on comprautiles.iduser = user.id inner join utiles on comprautiles.idutiles = utiles.id where user.id = '+req.param('id')+'  order by comprautiles.createdAt desc', function(err, compras) {
   if (err) return res.serverError(err);
-  return res.json(results.rows);
+  console.log(compras);
+  return res.view('compras-recientes', compras);
   });
+
+
 
   }
 

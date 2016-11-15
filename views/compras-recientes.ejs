@@ -38,10 +38,10 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	  <% compras.forEach(function(compra)  { %>
+	  <% compras.forEach(function(CompraUtiles)  { %>
 	    <tr>
-	      <th scope="row"><%= compra.id %></th>
-	      <td><%= compra.precio %></td>
+	      <th scope="row"><%= CompraUtiles.id %></th>
+	      <td><%= CompraUtiles.precio %></td>
 	    </tr>
 	  <% }); %>
 	  </tbody>

@@ -38,7 +38,7 @@ module.exports.routes = {
   'POST /signup': 'UserController.create',
   'PUT /login'  : 'UserController.login',
   'POST /modificado': 'PerfilController.updatePerfil',
-  '/perfil/compras/*' : 'PerfilController.compras_recientes',
+  '/perfil/compras/:id' : 'PerfilController.compras_recientes',
   '/perfil' : 'PerfilController.perfil',
   '/espacios' : {view: 'espacios'},
   '/espacios/cubiculos' : 'CubiculosController.CargarCubiculos',
