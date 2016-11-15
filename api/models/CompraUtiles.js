@@ -18,7 +18,6 @@ module.exports = {
   	},
   	entrega: {
   		type: 'boolean',
-  		required: true,
   	},
   },
 };

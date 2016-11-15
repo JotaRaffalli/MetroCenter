@@ -29,9 +29,13 @@ module.exports = {
 
 				var id = req.param('id');
 
-				Utiles.update({id: id},{cantidad: (util.cantidad)}).exec(function aftewards(err, updated){
-					res.view('singular');
+				Utiles.update({id: id},{cantidad: (util.cantidad-1)}).exec(function aftewards(err, updated){
 				});
+
+				CompraUtiles.create({idutiles: id, iduser: req.session.me}).exec(function afterwards(err, compra){
+					console.log(compra);
+					res.view('tienda');
+				})
 			});
 	}
 
