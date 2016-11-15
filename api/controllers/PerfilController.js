@@ -76,13 +76,11 @@ module.exports = {
 
   compras_recientes: function (req, res) 
   {
-     User.query({
-     text: 'SELECT sex FROM sexshop WHERE sex =',
-    }, function(err, results) 
-    {
-     if (err) return res.serverError(err);
-     return res.json(results.rows);
-    });
+
+  User.query('SELECT utiles.nombre as Nombre, utiles.precio as Precio FROM user inner join comprautiles on comprautiles.idusuarios = usuario.idusuario inner join utiles on comprautiles.idutiles = utiles.idutiles order by comprautiles.createdAt', function(err, results) {
+  if (err) return res.serverError(err);
+  return res.json(results.rows);
+  });
 
   }
 
