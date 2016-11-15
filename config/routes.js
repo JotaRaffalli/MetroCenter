@@ -48,7 +48,8 @@ module.exports.routes = {
   '/tarea' : {view: 'tarea'},
   '/tarea/*' : {view: 'query'},
   '/commerce': {view: 'tienda'},
-  '/commerce/singular': 'UtilesController.tiendaSingular'
+  '/commerce/singular': 'UtilesController.tiendaSingular',
+  '/commerce/singular/*': 'UtilesController.compraSingular'
 
   /***************************************************************************
   *                                                                          *
