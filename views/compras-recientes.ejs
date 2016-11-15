@@ -33,15 +33,15 @@
 	  <table class="table" style="width: 70%;" align="center" >
 	  <thead>
 	    <tr>
-	      <th>Id</th>
-	      <th>Monto</th>
+	      <th scope="col">Id</th>
+	      <th scope="col">Monto</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	  <% compras.forEach(function(CompraUtiles)  { %>
+	  <% comp.forEach(function(Compras)  { %>
 	    <tr>
-	      <th scope="row"><%= CompraUtiles.id %></th>
-	      <td><%= CompraUtiles.precio %></td>
+	      <th scope="row"><%= Compras.nombre %></th>
+	      <td scope="row"><%= Compras.precio %></td>
 	    </tr>
 	  <% }); %>
 	  </tbody>
