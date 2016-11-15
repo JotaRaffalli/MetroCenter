@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Tienda</title>
+	<!-- Meta -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- Favicon -->
+	<link href="favicon.html" rel="shortcut icon">
+	<link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
+</head>
+<header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
+      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          <ul class="nav navbar-nav" style="padding-left: 250px">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li><a href="/espacios">Espacios</a></li> 
+             <li><a href="/espacios">Estacionamiento</a></li> 
+            <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
+          </ul>
+          <!-- ******************Simple Formulario de LogIn ****************** -->
+          <!-- LOGIN FORM -->  
+          <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
+
+              <!-- EMAIL -->
+              <div class="form-group">
+                  <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
+              </div>
+
+              <!-- CONTRASEÑA -->
+              <div class="form-group">
+                  <input ng-model="loginForm.password" type="password" placeholder="Contraseña" name="password" class="form-control">
+              </div>
+
+              <!-- SUBMIT -->
+              <button style="margin-top: -3px;" type="submit" class="btn btn-primary">
+                <span ng-show="!loginForm.loading">Entrar</span>
+                <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+                <span ng-show="loginForm.loading">Entrando...</span>
+              </button>
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </form>
+          </div>
+        </nav>
+  </header>
+<body>
+<div><h1 align="center">Útiles</h1></div>
+  <div class="list-group">
+      <% util.forEach(function(utiles)  { %>
+         <div style="margin-top:-10px;" class="container marketing">
+
+      <div class="row">
+        <div class="col-lg-3" align="center">
+          <h2 style="margin-top: 15px;" align="center">Nombre</h2>
+          <p align="justify"><%- utiles.nombre %></p>
+        </div><!-- Columna -->
+        <div class="col-lg-3" align="center">
+          <h2 style="margin-top: 15px;" align="center">Disponibilidad</h2>
+          <p align="justify"><%- utiles.cantidad %></p>
+        </div><!-- Columna -->
+        <div class="col-lg-3" align="center">
+          <h2 style="margin-top: 15px;" align="center">Precio</h2>
+          <p align="justify"><%- utiles.precio %> Bs.</p>
+        </div><!-- Columna -->
+        <div class="col-lg-3" align="center">
+         <div class="col-lg-3" align="center">
+          <h2 style="margin-top: 15px;" align="center">Comprar</h2>
+          <p><a class="btn btn-lg btn-primary" href="/#" role="button">Click Aquí</a></p>
+        </div
+        </div>
+      </div><!-- Columna -->
+    </div>
+      <% }); %>
+  </div>
+
+</body>
+</html>
