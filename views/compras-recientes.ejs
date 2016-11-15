@@ -30,18 +30,20 @@
         </nav>
   </header>
 
-	  <table class="table" style="width: 70%;" align="center" >
+    <h2 style=" margin-top: 60px;" align="center" >Compras Recientes</h2>
+
+	  <table class="table" style="width: 70%; margin-top: 60px;" align="center" >
 	  <thead>
 	    <tr>
-	      <th scope="col">Id</th>
-	      <th scope="col">Monto</th>
+	      <th scope="col">Nombre</th>
+	      <th scope="col">Monto pagado</th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  <% comp.forEach(function(Compras)  { %>
 	    <tr>
 	      <th scope="row"><%= Compras.nombre %></th>
-	      <td scope="row"><%= Compras.precio %></td>
+	      <td scope="row"><%= Compras.precio %> Bs.</td>
 	    </tr>
 	  <% }); %>
 	  </tbody>

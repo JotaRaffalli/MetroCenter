@@ -10,22 +10,6 @@
   <title>MetroCenter - Auditorios</title>
 
 
-  <style>
-
-  .img-circle 
-  {
-    box-shadow: 0 0 0 4px rgba(255,255,255,1);
-    transition: background 0.2s, color 0.2s;  
-  }
-  .img-circle:hover
-  {
-    background: rgba(255,255,255,1);
-    background-color: #F47F30;
-    color: #64bb5d;
-  }
-
-  </style>
-
 </head>
 
 <body>
@@ -76,15 +60,20 @@
           </div>
         </nav>
   </header>
-  <div><h1 align="center">AUDITORIOS</h1></div>
-  <div class="list-group">
+
+  <div ><h2  style="margin-top: 50px; margin-bottom: 30px;" align="center"><strong>Auditorios</strong></h2></div>
+
+  <div  style="width: 50%; margin-left: 350px;" class="list-group">
       <% audi.forEach(function(auditorio)  { %>
          <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="list-group-item-heading"><%- auditorio.nombre %></h5>
-            <p class="list-group-item-text"><%- auditorio.localizacion %></p>
+            <h5 class="list-group-item-heading"><strong><%- auditorio.nombre %></strong></h5>
+            <p class="list-group-item-text">Lugar: <%- auditorio.localizacion %></p>
+            <p class="list-group-item-text">Evento: <%- auditorio.evento %></p>            
         </a>
       <% }); %>
   </div>
+
+  <div style="margin:30px; " align="center" ><img src="http://www.unimet.edu.ve/unimetsite/wp-content/uploads/2015/11/IMG_9803.jpg"></div>
   
 </body>
 </html>
