@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Compras Recientes</title>
+</head>
+<body>
+	<header> 
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
+      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          <ul class="nav navbar-nav" style="padding-left: 250px">
+            <li><a href="/">Home</a></li>
+            <li><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li><a href="/espacios">Espacios</a></li> 
+             <li><a href="/espacios">Estacionamiento</a></li> 
+            <li class="active"><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
+          </ul>
+        </nav>
+  </header>
+
+	  <table class="table" style="width: 70%;" align="center" >
+	  <thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Monto</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	  <% compras.forEach(function(compra)  { %>
+	    <tr>
+	      <th scope="row"><%= compra.id %></th>
+	      ><td><%= compra.precio %></td>
+	      <td><%= compra.id %></td>
+	    </tr>
+	  <% }); %>
+	  </tbody>
+	</table>
+
+</body>
+</html>

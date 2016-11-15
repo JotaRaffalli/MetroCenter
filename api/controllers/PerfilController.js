@@ -72,6 +72,18 @@ module.exports = {
     return res.view('homepage');
 
     });
+  },
+
+  compras_recientes: function (req, res) 
+  {
+     User.query({
+     text: 'SELECT sex FROM sexshop WHERE sex =',
+    }, function(err, results) 
+    {
+     if (err) return res.serverError(err);
+     return res.json(results.rows);
+    });
+
   }
 
 };
