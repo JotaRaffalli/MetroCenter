@@ -51,14 +51,16 @@ module.exports = {
 
   updatePerfil: function (req, res) {
 
-  var email = req.param('email');
+  var email_1 = req.param('email_1');
+  var email_2 = req.param('email_2');
   var nombre = req.param('nombre');
   var apellido = req.param('apellido');
-  var carnet = req.param('carnet');
+  // var carnet = req.param('carnet');
 
-  console.log(email);
+  console.log(email_1);
+  console.log(email_2);
 
-  User.update({email:email},{nombre:nombre,apellido:apellido,carnet:carnet}).exec(function afterwards(err, updated){
+  User.update({email:email_1},{nombre:nombre,apellido:apellido,email:email_2}).exec(function afterwards(err, updated){
 
     if (err) 
     {
