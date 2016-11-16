@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<header> 
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
+      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          <ul class="nav navbar-nav" style="padding-left: 250px">
+            <li><a href="/">Home</a></li>
+            <li><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li><a href="/espacios">Espacios</a></li> 
+             <li><a href="/espacios">Estacionamiento</a></li> 
+            <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
+          </ul>
+        </nav>
+</header>
+
+<body>
+    <div align="center" style="margin-top: 20px; margin-bottom:  10px; "><img src="/images/emoji.png" height="300" width="320" ></div>
+   <div class="row margin-top-20">
+        <div class="col-md-12 text-center">
+          <h2 class"text-center"><strong>¡Usuario Registrado!</strong></h2>
+          <h3 class"text-center">Ya te encuentras registrado en MetroCenter. Navega a través de la página para que disfrutez de todos los servicios que ofrecemos.</h3>
+          <h3 class"text-center">¡Visita tu perfil para obtener más información sobre tus datos!</h3>
+        </div>
+    </div>
+</body>
+</html>
