@@ -12,7 +12,7 @@ module.exports = {
 
   Consulta: function (req, res) {
 
-    if (req.param('id-query')== 1) 
+    if (req.param('idquery')== 1) 
       {
         var id = 1;
         Query.query('Select Pelicula, concat(Nombre,\' \',Apellido) as NombreActor,'+
@@ -35,44 +35,44 @@ module.exports = {
                     'and (Nombre = \'ED\' or Nombre = \'GOLDIE\' or Nombre = \'FRED\')))a',
         function(err, results) {
         if (err) return res.serverError(err);
+        res.view('query', { tabla: results, id: id });
         });
-        return res.view('query', { tabla: results, id: id });
       }
 
-     else if (req.param('id-query')== 2) 
+     else if (req.param('idquery')== 2) 
       {
         var id = 2;
         Query.query('Select', function(err, results) {
         if (err) return res.serverError(err);
+        res.view('query', { tabla: results, id: id  });
         });     
-        return res.view('query', { tabla: results, id: id  });
       }
 
-      else  if (req.param('id-query')== 3) 
+      else  if (req.param('idquery')== 3) 
         {
           var id = 3;
           Query.query('Select', function(err, results) {
           if (err) return res.serverError(err);
+          res.view('query', { tabla: results, id: id  });
           });
-          return res.view('query', { tabla: results, id: id  });
         }
 
-        else  if (req.param('id-query')== 4) 
+        else  if (req.param('idquery')== 4) 
           {
             var id = 4;
             Query.query('Select', function(err, results) {results
             if (err) return res.serverError(err);
+            res.view('query', { tabla: results, id: id  });
             });
-            return res.view('query', { tabla: results, id: id  });
           }
 
-          else  if (req.param('id-query')== 5) 
+          else  if (req.param('idquery')== 5) 
             {
               var id = 5;
               Query.query('Select', function(err, results) {
               if (err) return res.serverError(err);
+              res.view('query', { tabla: results, id: id  });
               });
-              return res.view('query', { tabla: results, id: id  });
             }
 
   }
