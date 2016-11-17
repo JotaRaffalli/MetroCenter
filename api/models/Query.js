@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  //connection: 'Sakila',
+  connection: 'Sakila',
   attributes: {
 
   }

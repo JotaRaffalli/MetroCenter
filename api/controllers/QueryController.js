@@ -9,27 +9,17 @@ module.exports = {
 	
 
 
-  /**
-   * `QueryController.consulta()`
-   */
-  query1: function (req, res) {
-    
-  },
 
-  query2: function (req, res){
+  Consulta: function (req, res) {
 
-  },
+    if (req.param('id-query')== 1) {var id = 1;return res.view('query', { tabla: results, id: id });}
+     else if (req.param('id-query')== 2) {var id = 2;return res.view('query', { tabla: results });}
+      else  if (req.param('id-query')== 3) {var id = 3;return res.view('query', { tabla: results });}
+        else  if (req.param('id-query')== 4) {var id = 4;return res.view('query', { tabla: results });}
+          else  if (req.param('id-query')== 5) {var id = 5;return res.view('query', { tabla: results });}
 
-  query3: function (req, res){
+  }
 
-  },
 
-  query4: function (req, res){
-
-  },
-
-  query5: function (req, res){
-
-  },
 };
 
