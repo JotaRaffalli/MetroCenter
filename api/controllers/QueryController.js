@@ -15,11 +15,11 @@ module.exports = {
     if (req.param('id-query')== 1) 
       {
         var id = 1;
-        Query.query('Select Pelicula, concat(Nombre,' ',Apellido) as NombreActor,'+
+        Query.query('Select Pelicula, concat(Nombre,\' \',Apellido) as NombreActor,'+
                     'Categoria, Ingles,Descripcion, Ciudades'+
                     'from (select f.title as Pelicula, a.first_name as Nombre, a.last_name as Apellido,'+
                     'category.name as Categoria,'+
-                    'IF (`language`.name = \'English\', ' true', ' false') as Ingles,'+
+                    'IF (`language`.name = \'English\', \' true\', \' false\') as Ingles,'+
                     'f.description as Descripcion, count(c.city_id) as Ciudades'+
                     'from film f inner join film_actor fa on f.film_id = fa.film_id'+
                     'inner join actor a on a.actor_id = fa.actor_id '+
@@ -31,8 +31,8 @@ module.exports = {
                     'inner join address ad on ad.address_id = store.address_id'+
                     'inner join city c on c.city_id = ad.city_id'+
                     'group by f.film_id'+
-                    'HAVING ((Categoria = 'Family' or Categoria = 'Documentary')'+
-                    'and (Nombre = 'ED' or Nombre = 'GOLDIE' or Nombre = 'FRED')))a',
+                    'HAVING ((Categoria = \'Family\' or Categoria = \'Documentary\')'+
+                    'and (Nombre = \'ED\' or Nombre = \'GOLDIE\' or Nombre = \'FRED\')))a',
         function(err, results) {
         if (err) return res.serverError(err);
         });
