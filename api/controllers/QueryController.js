@@ -57,8 +57,8 @@ module.exports = {
       else if (req.param('idquery')== 3) 
         {
           var id = 3;
-          Query.query('select f.title as PeliculasNuncaRentadas from film f left outer join inventory i on f.film_id = i.film_id left outer join rental r on r.inventory_id = i.inventory_id '+
-                      ' where (r.inventory_id IS NULL) group by f.title', function(err, results) {
+          Query.query('select f.title as PeliculasNuncaRentadas from film f left outer join inventory i on f.film_id = i.film_id left outer join rental r on r.inventory_id = i.inventory_id'+
+          	' where (r.inventory_id IS NULL) group by f.title;', function(err, results) {
           if (err) return res.serverError(err);
           res.view('query', { tabla: results, id: id  });
           });
@@ -68,11 +68,11 @@ module.exports = {
           {
             var id = 4;
             Query.query('select distinct concat(d.first_name,\' \', d.last_name) as Cliente'+
-						            ' from( select DATEDIFF(b.return_date,b.rental_date) as dif, c.first_name, c.last_name'+
-						            ' from payment a inner join rental b on a.rental_id = b.rental_id'+
-						            ' inner join customer c on b.customer_id = c.customer_id'+
+						' from( select DATEDIFF(b.return_date,b.rental_date) as dif, c.first_name, c.last_name'+
+						' from payment a inner join rental b on a.rental_id = b.rental_id'+
+						' inner join customer c on b.customer_id = c.customer_id'+
                         ' having dif > 3'+
-						            ' order by first_name) d',
+						' order by first_name) d;',
 			function(err, results) {results
             if (err) return res.serverError(err);
             res.view('query', { tabla: results, id: id  });
