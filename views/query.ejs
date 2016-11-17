@@ -75,10 +75,10 @@
 <body>
 	<div align="center">	
 		<h1> ENUNCIADO: <%= id %></h1>
-        <% if (id==1)  { %><p> Mi libro, luna de Plutón, está siendo un éxito! </p>
-        <% } else if (id==2) { %><p>Reynaldo es marico (: </p>
-        <% } else if (id==3) { %><p>El candelabro iatliano, el el candelabro italiano!</p>
-        <% } else if (id==4) { %><p>Si dice jiji la chupa :$</p>
+        <% if (id==1)  { %><p> Peliculas de 3 actores específicos, de 2 categorías específicas, con cantidad de ciudades en las que se mostraran, su descripción y si son en ingles (true /false) </p>
+        <% } else if (id==2) { %><p>  Quien de los empleados rento más películas, la cantidad, y el total de ganancia generada por ese empleado.</p>
+        <% } else if (id==3) { %><p>  Lista de películas que nunca han sido rentadas.</p>
+        <% } else if (id==4) { %><p> Listado de clientes con más de 3 días de retraso en la devolución del película.</p>
         <% } else { %><p>Jota quiere Toddy y porro o.o</p> <% } %>
 		
 		<button style="margin:20px;" class="btn btn-lg btn-query" onclick="creartabla()"><span class="glyphicon glyphicon-play"></span> Query # <%= id  %></button>
