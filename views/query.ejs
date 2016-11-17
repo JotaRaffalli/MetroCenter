@@ -17,9 +17,13 @@
 
 }
   </script>
-    <div align="center">    
+
+    <div align="center"> 
+    <button style="margin:20px;" class="btn btn-lg btn-query" onclick="ver()"><span class="glyphicon glyphicon-play"></span> Query # <%= id %></button>   
         <h1> ENUNCIADO: <%= id %></h1>
         <% if (id==1)  { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
+        
+
             <table style="visibility: hidden;" id="t01" class="table" style="width: 70%; margin-top: 60px;" align="center" >
       <thead>
         <tr>
@@ -96,7 +100,7 @@
     </table>
         <% } else { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p> <% } %>
         
-        <button style="margin:20px;" class="btn btn-lg btn-query" onclick="ver()"><span class="glyphicon glyphicon-play"></span> Query # <%= id %></button>
+        
     </div>
 
     <div id="showData" class="table-responsive"></div>
