@@ -6,31 +6,6 @@
 
 </head>
 <body>
-
-<nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
-      
-          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-      
-            <!-- Lineas que salen cuando el menu se colapsa-->
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <!-- Nombre de la app -->
-          
-          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-          <ul class="nav navbar-nav" style="padding-left: 250px">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/commerce">Tienda</a></li>
-            <li><a href="/locales">Locales</a></li> 
-            <li><a href="/espacios">Espacios</a></li> 
-            <li><a href="/espacios">Estacionamiento</a></li> 
-            <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
-          </ul>
-</nav>
-
 <script type="text/javascript">
   function ver (){
   if (<%- id %> == 1) {document.getElementById("t01").style.visibility = "visible ";}else if (<%- id %> == 2) {document.getElementById("t02").style.visibility = "visible ";}else if (<%- id %> == 3) {document.getElementById("t03").style.visibility = "visible ";} else if (<%- id %> == 4) {document.getElementById("t04").style.visibility = "visible ";}
@@ -49,7 +24,7 @@
         <% if (id==1)  { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
         
 
-            <table style="width: 75%;visibility: hidden;" id="t01" class="table" style="width: 70%; margin-top: 60px;" align="center" >
+            <table style="visibility: hidden;" id="t01" class="table" style="width: 70%; margin-top: 60px;" align="center" >
       <thead>
         <tr>
           <th scope="col">Pelicula</th>
@@ -74,7 +49,7 @@
       </tbody>
     </table>
         <% } else if (id==2) { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
-            <table style="width: 75%;visibility: hidden;" id="t02" class="table" style="width: 70%; margin-top: 60px;" align="center" >
+            <table style="visibility: hidden;" id="t02" class="table" style="width: 70%; margin-top: 60px;" align="center" >
       <thead>
         <tr>
           <th scope="col">Empleado</th>
@@ -93,7 +68,7 @@
       </tbody>
     </table>
         <% } else if (id==3) { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
-            <table style="width: 75%;visibility: hidden;" id="t03" class="table" style="width: 70%; margin-top: 60px;" align="center" >
+            <table style="visibility: hidden;" id="t03" class="table" style="width: 70%; margin-top: 60px;" align="center" >
       <thead>
         <tr>
           <th scope="col">Peliculas Nunca Rentadas</th>
@@ -109,7 +84,7 @@
       </tbody>
     </table>
         <% } else if (id==4) { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
-            <table style="width: 75%; visibility: hidden;" id="t04" class="table" style="width: 70%; margin-top: 60px;" align="center" >
+            <table style="visibility: hidden;" id="t04" class="table" style="width: 70%; margin-top: 60px;" align="center" >
       <thead>
         <tr>
           <th scope="col">Cliente</th>
