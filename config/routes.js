@@ -46,7 +46,7 @@ module.exports.routes = {
   '/informacion/*' : 'LocalesController.informacion',
   '/auditorios' : 'AuditoriosController.auditorios',
   '/tarea' : {view: 'tarea'},
-  '/tarea/ :id-query' : {view: 'query'},
+  '/tarea/:id-query' : 'QueryController.Consulta',
   '/commerce': {view: 'tienda'},
   '/commerce/singular': 'UtilesController.tiendaSingular',
   '/commerce/singular/:id': 'UtilesController.compraSingular',
