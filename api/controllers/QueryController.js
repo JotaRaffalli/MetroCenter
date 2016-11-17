@@ -42,13 +42,19 @@ module.exports = {
      else if (req.param('idquery')== 2) 
       {
         var id = 2;
-        Query.query('Select', function(err, results) {
+        Query.query('Select concat(Nombre,\' \',Apellido) as Empleado, '+ 
+                    ' RentasTotales, GananciaTotal from (select s.first_name as nombre, '+
+                    ' s.last_name as apellido, count(p.rental_id) as RentasTotales, '+
+                    ' sum(p.amount) as GananciaTotal from staff s '+
+                    ' inner join payment p on s.staff_id = p.staff_id group by s.staff_id '+
+                    ' order by RentasTotales desc limit 1) a', 
+        function(err, results) {
         if (err) return res.serverError(err);
         res.view('query', { tabla: results, id: id  });
         });     
       }
 
-      else  if (req.param('idquery')== 3) 
+      else if (req.param('idquery')== 3) 
         {
           var id = 3;
           Query.query('select f.title as PeliculasNuncaRentadas from film f left outer join inventory i on f.film_id = i.film_id left outer join rental r on r.inventory_id = i.inventory_id'+
