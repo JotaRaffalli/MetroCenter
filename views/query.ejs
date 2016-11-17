@@ -74,14 +74,14 @@
 </head>
 <body>
 	<div align="center">	
-		<h1> ENUNCIADO: <%=  %></h1>
-        <% if ()  { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
-        <% } else if () { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
-        <% } else if () { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
-        <% } else if () { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
+		<h1> ENUNCIADO: <%= id %></h1>
+        <% if (id==1)  { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
+        <% } else if (id==2) { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
+        <% } else if (id==3) { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
+        <% } else if (id==4) { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p>
         <% } else { %><p>BLA BLA BLA BLA BLA BLA BLA BLA BLA</p> <% } %>
 		
-		<button style="margin:20px;" class="btn btn-lg btn-query" onclick="creartabla()"><span class="glyphicon glyphicon-play"></span> Query # <%=  %></button>
+		<button style="margin:20px;" class="btn btn-lg btn-query" onclick="creartabla()"><span class="glyphicon glyphicon-play"></span> Query # <%= id %></button>
 	</div>
 
 	<div id="showData" class="table-responsive"></div>
