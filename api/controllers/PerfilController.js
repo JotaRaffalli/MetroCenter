@@ -6,17 +6,7 @@
  */
 
 module.exports = {
-  
-      //     User.findOne({
-      //     email: "raffallijoseluis@gmail.com"
-      // }, function foundUser(err, user) {
-      //     if (err) return res.negotiate(err);
-      //     if (!user) return res.notFound();
-      //     var usuario= user;
-          
-      //     return usuario;
 
-      // });
 
     perfil: function (req, res) {
 
@@ -55,7 +45,7 @@ module.exports = {
   var email_2 = req.param('email_2');
   var nombre = req.param('nombre');
   var apellido = req.param('apellido');
-  // var carnet = req.param('carnet');
+ 
 
   console.log(email_1);
   console.log(email_2);
@@ -77,14 +67,11 @@ module.exports = {
   compras_recientes: function (req, res) 
   {
 
-  User.query('SELECT utiles.nombre, utiles.precio FROM user inner join comprautiles on comprautiles.iduser = user.id inner join utiles on comprautiles.idutiles = utiles.id where user.id = '+req.param('id')+'  order by comprautiles.createdAt desc', function(err, compras) {
+  User.query('SELECT utiles.nombre, utiles.precio FROM user inner join comprautiles on comprautiles.iduser = user.id inner join utiles on comprautiles.idutiles = utiles.id where user.id = '+req.param('id')+'  order by comprautiles.createdAt desc limit 5', function(err, compras) {
   if (err) return res.serverError(err);
   console.log(compras);
   return res.view('compras-recientes', { comp: compras });
   });
-
-
-
   }
 
 };
