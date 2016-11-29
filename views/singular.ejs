@@ -64,36 +64,27 @@
         </nav>
   </header>
 <body>
-<div style="margin-top: 60px;" ><h2 align="center"><strong>Útiles</strong></h2></div>
-  <div style="margin-top: 30px;" class="list-group">
-      <% util.forEach(function(utiles)  { %>
-         <div style="margin-top:-10px;" class="container marketing">
-
-      <div class="row">
-        <div class="col-lg-3" align="center">
-          <h3 style="margin-top: 15px;" align="center">Nombre</h3>
-          <p align="center"><%- utiles.nombre %></p>
-        </div><!-- Columna -->
-        <div class="col-lg-3" align="center">
-          <h3 style="margin-top: 15px;" align="center">Disponibilidad</h3>
-          <p align="center"><%- utiles.cantidad %></p>
-        </div><!-- Columna -->
-        <div class="col-lg-3" align="center">
-          <h3 style="margin-top: 15px;" align="center">Precio</h3>
-          <p align="center"><%- utiles.precio %> Bs.</p>
-        </div><!-- Columna -->
-        <div class="col-lg-3" align="center">
-         <div class="col-lg-3" align="center">
-          <h3 style="margin-top: 15px;" align="center">Comprar</h3>
-          <p><a class="btn btn-primary" href="/commerce/singular/<%= utiles.id %>" role="button">Click Aquí</a></p>
-        </div>
-        </div>
-      </div><!-- Columna -->
-    </div>
-      <% }); %>
-  </div>
-  </div>
 
 
+<table class="table" style="width: 70%;" align="center" >
+  <thead>
+    <tr>
+      <th>Artículo</th>
+      <th>Disponibilidad</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% util.forEach(function(utiles)  { %>
+    <tr>
+      <th scope="row"><%= utiles.nombre %></th>
+      <td><%- utiles.cantidad %></td>
+      <td><%- utiles.precio %> Bs.</td>
+      <td><a class="btn btn-xs btn-primary" href="/commerce/singular/<%= utiles.id %>" role="button">Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+    </tr>
+  <% }); %>
+  </tbody>
+</table>
 </body>
 </html>
