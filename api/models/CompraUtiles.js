@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-  	idutiles:{
+  	idcompra:{
   		type: 'string',
   		required: true,
   	},
