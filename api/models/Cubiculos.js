@@ -21,7 +21,7 @@ module.exports = {
 
   	hora_entrada : {
   		type: 'time'
-  	}
+  	},
 
     nombre: {
       type: 'string',
