@@ -77,32 +77,16 @@
  	    		<th>Precio</th>
     		</tr>
   		</thead>
-
-  		<tbody>
-  			<tr>
-  				<th scope="row"><h3> Paquete</h3><p style="color: gray;" font-size="">Descripcion del paquete mamate un guevo</p></th>
-  			</tr>
-  		</tbody>
-
-
-
-
-
-
-
-
-
-
-<!--   		<tbody>
-  		<% util.forEach(function(utiles)  { %>
+		<tbody>
+  		<% utiles.forEach(function(paquete)  { %>
     		<tr>
-      			<th scope="row"><%= utiles.nombre %></th>
-      			<td><%- utiles.cantidad %></td>
-      			<td><%- utiles.precio %> Bs.</td>
-      			<td><a class="btn btn-xs btn-primary" href="/commerce/singular/<%= utiles.id %>" role="button">Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+      			<th scope="row"><h3><%= paquete.nombre %></h3><p style="color: gray;">paquete.descripcion</p></th>
+      			<td><%- paquete.cantidad %></td>
+      			<td><%- paquete.precio %> Bs.</td>
+      			<td><a class="btn btn-xs btn-primary" href="/commerce/singular/<%= paquete.idutiles %>" role="button">Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></td>
     		</tr>
   		<% }); %>
-  		</tbody> -->
+  		</tbody>
 	</table>
 </body>
 </html>
