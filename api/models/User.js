@@ -46,7 +46,6 @@ module.exports = {
 
     nivelDeAcceso: {
       type: 'integer',
-      unique: true,
     },
 
   	contraseñaEncriptada : {
