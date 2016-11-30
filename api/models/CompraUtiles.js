@@ -19,6 +19,9 @@ module.exports = {
   	entrega: {
   		type: 'boolean',
   	},
+    montototal: {
+      type: 'float',
+    },
   },
 };
 

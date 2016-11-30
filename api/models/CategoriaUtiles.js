@@ -8,7 +8,13 @@
 module.exports = {
 
   attributes: {
+  	idutiles: {
+  		type: 'int',
+  	},
 
+  	idcategoria: {
+  		type: 'int',
+  	},
   }
 };
 

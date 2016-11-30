@@ -23,6 +23,9 @@ module.exports = {
   		type: 'time'
   	}
 
+    nombre: {
+      type: 'string',
+    },
   }
 };
 

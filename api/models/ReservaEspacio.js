@@ -8,7 +8,21 @@
 module.exports = {
 
   attributes: {
+  	idusuario: {
+  		type: 'int',
+  	},
 
+  	idespacio: {
+  		type: 'int',
+  	},
+
+  	horaentrada: {
+  		type: 'time',
+  	},
+
+  	horasalida: {
+  		type: 'time',
+  	},
   }
 };
 

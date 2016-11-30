@@ -8,7 +8,13 @@
 module.exports = {
 
   attributes: {
+  	idcarrera : { 
+  		type: 'int',
+  	},
 
+  	idusuario: {
+  		type: 'int',
+  	},
   }
 };
 

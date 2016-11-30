@@ -8,7 +8,13 @@
 module.exports = {
 
   attributes: {
+  	iddepartamento : { 
+  		type: 'int'
+  	},
 
+  	nombredepartamento: {
+  		type: 'string',
+  	},
   }
 };
 

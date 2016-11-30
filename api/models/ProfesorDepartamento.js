@@ -8,7 +8,14 @@
 module.exports = {
 
   attributes: {
+  	iddepartamento : { 
+  		type: 'int',
+  		required: true,
+  	},
 
+  	idusuario: {
+  		type: 'int',
+  	},
   }
 };
 

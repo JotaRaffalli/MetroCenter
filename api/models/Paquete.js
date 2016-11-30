@@ -8,7 +8,17 @@
 module.exports = {
 
   attributes: {
+  	idutiles: {
+  		type: 'int',
+  	},
 
+  	cantidadutiles: {
+  		type: 'int',
+  	},
+
+  	descripcion: {
+  		type: 'string',
+  	},
   }
 };
 

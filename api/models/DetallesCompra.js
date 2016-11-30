@@ -8,7 +8,21 @@
 module.exports = {
 
   attributes: {
+  	idcompra : { 
+  		type: 'int'
+  	},
 
+  	idutiles: {
+  		type: 'int',
+  	},
+
+  	precio: {
+  		type: 'float',
+  	},
+
+  	cantidad: {
+  		type: 'int',
+  	},
   }
 };
 

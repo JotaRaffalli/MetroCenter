@@ -8,7 +8,21 @@
 module.exports = {
 
   attributes: {
+  	idusuario: {
+  		type: 'int',
+  	},
 
+  	idespacio: {
+  		type: 'int',
+  	},
+
+  	disponibilidad: {
+  		type: 'boolean',
+  	},
+
+  	nivelacceso: {
+  		type: 'int',
+  	},
   }
 };
 

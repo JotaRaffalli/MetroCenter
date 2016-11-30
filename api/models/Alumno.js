@@ -8,7 +8,14 @@
 module.exports = {
 
   attributes: {
+  	idusuario : { 
+  		type: 'int',
+  		required: true,
+  	},
 
+  	preparador: {
+  		type: 'boolean',
+  	},
   }
 };
 
