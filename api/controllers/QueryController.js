@@ -88,8 +88,18 @@ module.exports = {
               });
             }
 
-  }
+  },
 
+
+  utilesMasComprados : function (req,res) {
+      Utiles.query('SELECT utiles.nombre as Nombre, carrera.nombreCarrera, count(idCompras) as Cantidad FROM carrera inner join alumnoCarrera on carrera.idCarrera = alumnoCarrera.idCarrera inner join alumno on alumnoCarrera.idUsuario = alumno.idUsuario  inner join usuario on alumno.idUsuario = usuario.idUsuario inner join utiles on comprautiles.idUsuario = usuario.idUsuario inner join detallesCompra on compraUtiles.idCompra = detallesCompra.idCompra inner join utiles on detallesCompra.idUtiles = utiles.idUtiles group by carrera.nombreCarrera, utiles.nombre'+
+    'limit 3', function(err, compras) {
+        if (err) return res.serverError(err);
+        console.log(compras);
+        return res.view('best-sellers', { comp: compras });
+      });
+    
+  } 
 
 };
 
