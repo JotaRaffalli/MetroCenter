@@ -8,7 +8,7 @@
 <body>
 <script type="text/javascript">
   function ver (){
-  if (<%- id %> == 1) {document.getElementById("t01").style.visibility = "visible ";}else if (<%- id %> == 2) {document.getElementById("t02").style.visibility = "visible ";}else if (<%- id %> == 3) {document.getElementById("t03").style.visibility = "visible ";} else if (<%- id %> == 4) {document.getElementById("t04").style.visibility = "visible ";}
+  if (<%- id %> == 1) {document.getElementById("t01").style.visibility = "visible ";}else if (<%- id %> == 2) {document.getElementById("t02").style.visibility = "visible ";}else if (<%- id %> == 3) {document.getElementById("t03").style.visibility = "visible ";} else if (<%- id %> == 4) {document.getElementById("t04").style.visibility = "visible "; else if (<%- id %> == 6) {document.getElementById("t06").style.visibility = "visible ";}
   
   
   
@@ -98,8 +98,30 @@
       <% }); %>
       </tbody>
     </table>
-        <% } else { %><p>Lista de clientes VIP, entendiendo que los VIP son aquellos clientes han rentado películas semanalmente durante al menos 3 meses.</p> <% } %>
-        
+        <% } else if (id==5) { %><p>Lista de clientes VIP, entendiendo que los VIP son aquellos clientes han rentado películas semanalmente durante al menos 3 meses.</p> <% } %>
+         
+        <% } else if (id==6) { %><p>Los 3 productos más vendidos por carrera</p>
+            <table style="width: 75%;visibility: hidden;" id="t06" class="table" style="width: 70%; margin-top: 60px;" align="center" >
+      <thead>
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Carrera</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      <% tabla.forEach(function(tbl)  { %>
+      		<% tbl.forEach(function(carrera)  { %>
+        <tr>
+          <th scope="row"><%= carrera.Nombre %></th>
+          <th scope="row"><%= carrera.nombreCarrera %></th>
+          <th scope="row"><%= carrera.Cantidad %></th>
+        </tr>
+        <% });%>
+      <% }); %>
+      </tbody>
+    </table>
         
     </div>
 

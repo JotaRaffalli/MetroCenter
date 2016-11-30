@@ -92,13 +92,18 @@ module.exports = {
 
 
   utilesMasComprados : function (req,res) {
-      Utiles.query('SELECT utiles.nombre as Nombre, carrera.nombreCarrera, count(idCompras) as Cantidad FROM carrera inner join alumnoCarrera on carrera.idCarrera = alumnoCarrera.idCarrera inner join alumno on alumnoCarrera.idUsuario = alumno.idUsuario  inner join usuario on alumno.idUsuario = usuario.idUsuario inner join utiles on comprautiles.idUsuario = usuario.idUsuario inner join detallesCompra on compraUtiles.idCompra = detallesCompra.idCompra inner join utiles on detallesCompra.idUtiles = utiles.idUtiles group by carrera.nombreCarrera, utiles.nombre'+
-    'limit 3', function(err, compras) {
+      var id = 6;
+      var a = 1;
+      var obj = [];
+      while(a<=13){
+      Utiles.query('SELECT utiles.nombre as Nombre, carrera.nombrecarrera, count(idcompra) as Cantidad FROM carrera inner join alumnocarrera on carrera.idcarrera = alumnocarrera.idcarrera inner join alumno on alumnocarrera.idusuario = alumno.idusuario  inner join user on alumno.idusuario = user.id inner join comprautiles on user.id = comprautiles.iduser inner join detallescompra on comprautiles.idcompra = detallescompra.idcompra inner join utiles on detallescompra.idutiles = utiles.id where carrera.idcarrera='+a+' group by utiles.nombre order by Cantidad desc limit 3'
+      , function(err, results) {
         if (err) return res.serverError(err);
-        console.log(compras);
-        return res.view('best-sellers', { comp: compras });
-      });
-    
+        obj[a-1]=results;
+        a=a+1;
+      }); 
+    }
+    return res.view('query', { tabla: obj, id: id });
   } 
 
 };
