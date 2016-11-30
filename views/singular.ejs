@@ -65,11 +65,11 @@
   </header>
 <body>
 
-  <div style="margin-top: 60px;" ><h2 align="center"><strong>Útiles</strong></h2></div>
+  <div style="margin-top: 60px;" ><h2 align="center"><strong>Catálogo de Útiles</strong></h2></div>
     
   </div>
 
-<table class="table" style="width: 70%;" align="center" >
+<table class="table" style=" width: 70%;" align="center" >
   <thead>
     <tr>
       <th>Artículo</th>
@@ -84,10 +84,126 @@
       <th scope="row"><%= utiles.nombre %></th>
       <td><%- utiles.cantidad %></td>
       <td><%- utiles.precio %> Bs.</td>
-      <td><a class="btn btn-xs btn-primary" href="/commerce/singular/<%= utiles.id %>" role="button">Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+      <td><button class="btn btn-xs btn-primary" onclick="AddtoCart('<%= utiles.nombre %>','1',<%- utiles.precio %>)" >Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button> </td>
     </tr>
   <% }); %>
   </tbody>
 </table>
+
+<!-- Carrito -->
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+          <div class="panel-title">
+            <div class="row">
+              <div class="col-xs-6">
+                <h5><span class="glyphicon glyphicon-shopping-cart"></span> Carrito de Comras</h5>
+              </div>
+            </div>
+          </div>
+  <table id="orderedProductsTbl" class="table table-hover table-condensed">
+            <thead>
+            <tr>
+              <th style="width:50%">Producto</th>
+              <th style="width:10%">Cantidad</th>
+              <th style="width:8%">Precio</th>
+              <th style="width:22%" class="text-center">Subtotal</th>
+              <th style="width:10%"></th>
+            </tr>
+          </thead>
+          <tbody id="orderedProductsTblBody" >
+            <tr>
+              <td data-th="Product">
+                <div class="row">                  
+                  <div class="col-sm-10">
+                    <h4 class="nomargin">Producto</h4>
+                  </div>
+                </div>
+              </td>
+              <td data-th="Price">Bs</td>
+              <td data-th="Quantity">
+                <input type="number" class="form-control text-center" value="1">
+              </td>
+              <td data-th="Subtotal" class="text-center">-</td>
+              <td class="actions" data-th="">
+                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>             
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="visible-xs">
+              <td class="text-center"><strong>Total 1.99</strong></td>
+            </tr>
+            <tr>
+              <td><a href="/tienda" class="btn btn-warning"><i class="fa fa-angle-left"></i> Volver a tienda</a></td>
+              <td colspan="2" class="hidden-xs"></td>
+              <td class="hidden-xs text-center" id="cart_total" ><strong>Total </strong></td>
+              <td><a href="#" class="btn btn-primary btn-block">Proceder a comprar <i class="fa fa-angle-right"></i></a></td>
+            </tr>
+          </tfoot>
+        </table>
+</div>
+
+    <script type="text/javascript">
+        
+        
+        //create array that will hold all ordered products
+        var shoppingCart = [];
+        
+        //this function manipulates DOM and displays content of our shopping cart
+        function displayShoppingCart(){
+            var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
+            //ensure we delete all previously added rows from ordered products table
+            while(orderedProductsTblBody.rows.length>0) {
+                orderedProductsTblBody.deleteRow(0);
+            }
+                   
+            //variable to hold total price of shopping cart
+            var cart_total_price=0;
+            //iterate over array of objects
+            for(var product in shoppingCart){
+                //add new row      
+                var row=orderedProductsTblBody.insertRow();
+                //create three cells for product properties 
+                var cellName = row.insertCell(0);
+                var cellDescription = row.insertCell(1);
+                var cellPrice = row.insertCell(2);
+                cellPrice.align="right";
+                //fill cells with values from current product object of our array
+                cellName.innerHTML = shoppingCart[product].Name;
+                cellDescription.innerHTML = shoppingCart[product].Description;
+                cellPrice.innerHTML = shoppingCart[product].Price;
+                cart_total_price+=shoppingCart[product].Price;
+            }
+            //fill total cost of our shopping cart 
+            document.getElementById("cart_total").innerHTML=cart_total_price;
+        }
+        
+        
+        function AddtoCart(name,description,price){
+           //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
+           var singleProduct = {};
+           //Fill the product object with data
+           singleProduct.Name=name;
+           singleProduct.Description=description;
+           singleProduct.Price=price;
+           //Add newly created product to our shopping cart 
+           shoppingCart.push(singleProduct);
+           //call display function to show on screen
+           displayShoppingCart();
+           
+        }  
+
+
+        //Add some products to our shopping cart via code or you can create a button with onclick event
+        //AddtoCart("Table","Big red table",50);
+        //AddtoCart("Door","Big yellow door",150);
+        //AddtoCart("Car","Ferrari S23",150000);
+
+        
+        
+        
+    </script>
+
 </body>
 </html>
