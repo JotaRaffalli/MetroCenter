@@ -47,6 +47,7 @@ module.exports.routes = {
   '/auditorios' : 'AuditoriosController.auditorios',
   '/tarea' : {view: 'tarea'},
   '/tarea/:idquery' : 'QueryController.Consulta',
+  'tarea/6' : 'QueryController.utilesMasComprados'
   '/commerce': {view: 'tienda'},
   '/commerce/singular': 'UtilesController.tiendaSingular',
   '/commerce/paquete': {view: 'paquete'},
