@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
   	idcarrera : { 
   		type: 'int',
+  		unique: true,
   	},
 
   	nombrecarrera: {

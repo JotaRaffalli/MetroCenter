@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
   	idcategoria: {
   		type: 'int',
+  		unique: true,
   	},
 
   	nombre: {
