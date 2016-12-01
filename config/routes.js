@@ -53,6 +53,7 @@ module.exports.routes = {
   '/commerce/singular': 'UtilesController.tiendaSingular',
   '/commerce/paquete': 'UtilesController.tiendaPaquetes',
   '/commerce/singular/:id': 'UtilesController.compraSingular',
+  '/commerce/paquete/:id': 'UtilesController.compraSingular',
   '/commerce/compra-exitosa': {view: 'compra-exitosa'},
   '/usuario-registrado': {view: 'usuario-registrado'}
 
