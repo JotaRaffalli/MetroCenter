@@ -50,7 +50,7 @@ module.exports.routes = {
   'tarea/6' : 'QueryController.utilesMasComprados',
   '/commerce': {view: 'tienda'},
   '/commerce/singular': 'UtilesController.tiendaSingular',
-  '/commerce/paquete': {view: 'paquete'},
+  '/commerce/paquete': 'UtilesController.tiendaPaquetes',
   '/commerce/singular/:id': 'UtilesController.compraSingular',
   '/usuario-registrado': {view: 'usuario-registrado'}
 

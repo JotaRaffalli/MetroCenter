@@ -45,7 +45,17 @@ module.exports = {
 			});
     }
 
-	}
+	},
+
+	tiendaPaquetes: function (req, res, next){
+
+		Paquete.query('Select utiles.nombre as nombre, paquete.descripcion as descripcion, utiles.cantidad as cantidad, utiles.precio as precio from utiles inner join paquete where utiles.id = paquete.idutiles',function afterwards(err, paquete){
+			if(err) return next(err);
+			if(!paquete) return next();
+
+			res.view('paquete', { paquetes: paquete });
+		});
+	},
 
 };
 
