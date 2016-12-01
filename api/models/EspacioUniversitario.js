@@ -8,10 +8,6 @@
 module.exports = {
 
   attributes: {
-  	idusuario: {
-  		type: 'int',
-  	},
-
   	idespacio: {
   		type: 'int',
   	},
