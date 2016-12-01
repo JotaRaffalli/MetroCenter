@@ -26,6 +26,11 @@ module.exports = {
     nombre: {
       type: 'string',
     },
+
+    idespacio : {
+      type: 'int',
+      required: true,
+    },
   }
 };
 
