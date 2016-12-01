@@ -76,3 +76,4 @@ module.exports = {
 
 };
 
+//Select utiles.nombre, utiles.precio from utiles inner detallescompra on detallescompra.idutiles
