@@ -10,7 +10,6 @@ module.exports = {
   attributes: {
   	idcompra:{
   		type: 'string',
-  		required: true,
   	},
   	iduser: {
   		type: 'string',

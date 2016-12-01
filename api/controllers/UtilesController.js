@@ -9,7 +9,7 @@ module.exports = {
 
 	tiendaSingular: function (req,res){
 
-		Utiles.query('select utiles.nombre as nombre, singular.marca as marca, utiles.cantidad as cantidad, utiles.precio as precio from utiles inner join singular where utiles.id = singular.idutiles',function(err, utiles){
+		Utiles.query('select utiles.id, utiles.nombre as nombre, singular.marca as marca, utiles.cantidad as cantidad, utiles.precio as precio from utiles inner join singular where utiles.id = singular.idutiles',function(err, utiles){
 
 			res.view('singular', {
 				util: utiles
@@ -25,25 +25,38 @@ module.exports = {
     } 
     else 
     {
-    			Utiles.findOne({id: req.param('id')}).exec(function(err, util){
+    		console.log('antes de find one');
+    		console.log(req.param('id'));
+    		Utiles.findOne({id: req.param('id')}).exec(function(err, util){
 				if(err) return next(err);
 				if(!util) return next();
-
-
-				var id = req.param('id');
-
-				Utiles.update({id: id},{cantidad: (util.cantidad-1)}).exec(function aftewards(err, updated){
+				console.log('antes de create');
+				CompraUtiles.create({ iduser: req.session.me, montototal: util.precio }).exec(function afterwards(err, compra)
+    			{
+						if(err) return next(err);
+						if(!compra) return next();
+						idCompra=compra.idcompra;
+						console.log('antes de update');
+						Utiles.update({id: util.id},{cantidad: (util.cantidad-1)}).exec(function aftewards(err, updated){
+						});
+						console.log('antes de create 2');
+						DetallesCompra.create({idcompra: idCompra, idutil: util.id, precio: util.precio, cantidad: 1}).exec(function afterwards(err, compra){
+							if(err) return next(err);
+							if(!compra) return next();
+						});
+						return;
 				});
 
-				CompraUtiles.create({idutiles: id, iduser: req.session.me}).exec(function afterwards(err, compra){
-				if(err) return next(err);
-				if(!compra) return next();
 
-					res.view('compra-exitosa');
-					
-				});
+				
+
+				
 			});
-    }
+			console.log('antes de view');
+    		res.view('compra-exitosa');	
+    	}
+    	
+    		
 
 	},
 

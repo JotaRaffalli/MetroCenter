@@ -4,16 +4,16 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Tienda</title>
-	<!-- Meta -->
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	<!-- Favicon -->
-	<link href="favicon.html" rel="shortcut icon">
-	<link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
+  <title>Tienda</title>
+  <!-- Meta -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <!-- Favicon -->
+  <link href="favicon.html" rel="shortcut icon">
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
 </head>
 <header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
     <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
@@ -28,7 +28,7 @@
           </button>
 
           <!-- Nombre de la app -->
-          <a class="navbar-brand" href="/"><img src="/./images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <a class="navbar-brand" href="/"><img src="/.images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
           <ul class="nav navbar-nav" style="padding-left: 250px">
             <li><a href="/">Home</a></li>
@@ -64,138 +64,29 @@
         </nav>
   </header>
 <body>
+<table class="table" style="width: 70%;" align="center" >
+      <thead>
+        <tr>
+          <th>Artículo</th>
+          <th>Marca</th>
+          <th>Disponibilidad</th>
+          <th>Precio</th>
+          <th>Comprar</th>
+        </tr>
+      </thead>
+    <tbody>
+      <% util.forEach(function(utiles)  { %>
+         <tr>
+            <th scope="row"><h3><%- utiles.nombre %></h3></th>
+            <td><%- utiles.marca %></td>
+            <td><%- utiles.cantidad %></td>
+            <td><%- utiles.precio %> Bs.</td>
+            <td><p><a class="btn btn-lg btn-primary" href="/commerce/singular/<%= utiles.id %>" role="button">Click Aquí</a></p></td>
+        </tr>        
+      <% }); %>
+    </tbody>
+</table> 
 
-  <div style="margin-top: 60px;" ><h2 align="center"><strong>Catálogo de Útiles</strong></h2></div>
-    
-  </div>
-
-<table class="table" style=" width: 70%;" align="center" >
-  <thead>
-    <tr>
-      <th>Artículo</th>
-      <th>Disponibilidad</th>
-      <th>Precio</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% util.forEach(function(utiles)  { %>
-    <tr>
-      <th scope="row"><h3><%= utiles.nombre %></h3><p style="color: gray;"><%= utiles.marca %></p></th>
-      <td><%- utiles.cantidad %></td>
-      <td><%- utiles.precio %> Bs.</td>
-      <td><button class="btn btn-xs btn-primary" onclick="AddtoCart('<%= utiles.nombre %>','1',<%= utiles.id %>,<%- utiles.precio %>)" >Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button> </td>
-    </tr>
-  <% }); %>
-  </tbody>
-</table>
-
-<!-- Tabla Carrito -->
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
-          <div class="panel-title">
-            <div class="row">
-              <div class="col-xs-6">
-                <h5><span class="glyphicon glyphicon-shopping-cart"></span> Carrito de Compras</h5>
-              </div>
-            </div>
-          </div>
-  <table id="orderedProductsTbl" class="table table-hover table-condensed">
-            <thead>
-            <tr>
-              <th style="width:50%">Producto</th>
-              <th style="width:10%">Cantidad</th>
-              <th style="width:8%">Precio</th>
-              <th style="width:22%" class="text-center">Subtotal</th>
-              <th style="width:10%"></th>
-            </tr>
-          </thead>
-          <tbody id="orderedProductsTblBody" >
-            <tr>
-              <td data-th="Product">
-              -
-              </td>
-              <td data-th="Quantity">-</td>
-              <td data-th="Price">-</td>
-              <td data-th="Subtotal" class="text-center">-</td>
-              <td class="actions" data-th="">
-                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>           
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><a href="/commerce" class="btn btn-warning"><i class="fa fa-angle-left"></i> Volver a tienda</a></td>
-              <td colspan="2" class="hidden-xs"></td>
-              <td class="hidden-xs text-center" id="cart_total" ><strong>0 Bs</strong></td>
-              <td><a href="/commerce/compra-exitosa" class="btn btn-primary btn-block">Proceder a comprar <i class="fa fa-angle-right"></i></a></td>
-            </tr>
-          </tfoot>
-        </table>
-</div>
-
-    <script type="text/javascript">
-        
-        
-        //create array that will hold all ordered products
-        var shoppingCart = [];
-        
-        //this function manipulates DOM and displays content of our shopping cart
-        function displayShoppingCart(){
-            var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
-            //ensure we delete all previously added rows from ordered products table
-            while(orderedProductsTblBody.rows.length>0) {
-                orderedProductsTblBody.deleteRow(0);
-            }
-                   
-            //variable to hold total price of shopping cart
-            var cart_total_price=0;
-            //iterate over array of objects
-            for(var product in shoppingCart){
-                //add new row      
-                var row=orderedProductsTblBody.insertRow();
-                //create three cells for product properties 
-                var cellName = row.insertCell(0);
-                var cellDescription = row.insertCell(1);
-                var cellPrice = row.insertCell(2);
-                cellPrice.align="right";
-                //fill cells with values from current product object of our array
-                cellName.innerHTML = shoppingCart[product].Nombre;
-                cellDescription.innerHTML = shoppingCart[product].Cantidad;
-                cellPrice.innerHTML = shoppingCart[product].Precio;
-                cart_total_price+=shoppingCart[product].Precio;
-            }
-            //fill total cost of our shopping cart 
-            document.getElementById("cart_total").innerHTML=cart_total_price;
-        }
-        
-        
-        function AddtoCart(nombre,cantidad,id,precio){
-           //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
-           var singleProduct = {};
-           //Fill the product object with data
-           singleProduct.Nombre=nombre;
-           singleProduct.Cantidad=cantidad;
-           singleProduct.Precio=precio;
-           singleProduct.Id=id;
-           //Add newly created product to our shopping cart 
-           shoppingCart.push(singleProduct);
-           //call display function to show on screen
-           displayShoppingCart();
-           
-        }  
-
-
-        //Add some products to our shopping cart via code or you can create a button with onclick event
-        //AddtoCart("Table","Big red table",50);
-        //AddtoCart("Door","Big yellow door",150);
-        //AddtoCart("Car","Ferrari S23",150000);
-
-        
-        
-        
-    </script>
 
 </body>
 </html>
