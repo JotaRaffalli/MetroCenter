@@ -48,13 +48,13 @@ module.exports.connections = {
     database: 'sql9147287' //optional
   },
 
-  Sakila : {
+  /*Sakila : {
     adapter: 'sails-mysql',
     host: 'localhost',
     user: 'sakila', //optional
     password: 'sakila', //optional
     database: 'sakila' //optional
-  },
+  },*/
 
 
 
