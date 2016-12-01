@@ -18,11 +18,13 @@ module.exports = {
 
 	'compraSingular': function (req, res, next){
 			
-		var hola = req.param('id');
-		console.log(hola);
-
-
-			Utiles.findOne({id: req.param('id')}).exec(function(err, util){
+	if (!req.session.me) 
+	{
+      return res.view('homepage');
+    } 
+    else 
+    {
+    			Utiles.findOne({id: req.param('id')}).exec(function(err, util){
 				if(err) return next(err);
 				if(!util) return next();
 
@@ -39,6 +41,8 @@ module.exports = {
 					res.view('tienda');
 				});
 			});
+    }
+
 	}
 
 };
