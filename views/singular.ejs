@@ -81,7 +81,7 @@
   <tbody>
   <% util.forEach(function(utiles)  { %>
     <tr>
-      <th scope="row"><%= utiles.nombre %></th>
+      <th scope="row"><h3><%= utiles.nombre %></h3><p style="color: gray;"><%= utiles.marca %></p></th>
       <td><%- utiles.cantidad %></td>
       <td><%- utiles.precio %> Bs.</td>
       <td><button class="btn btn-xs btn-primary" onclick="AddtoCart('<%= utiles.nombre %>','1',<%= utiles.id %>,<%- utiles.precio %>)" >Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button> </td>

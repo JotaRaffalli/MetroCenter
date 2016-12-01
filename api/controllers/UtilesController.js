@@ -9,7 +9,7 @@ module.exports = {
 
 	tiendaSingular: function (req,res){
 
-		Utiles.find().exec(function(err, utiles){
+		Utiles.query('select utiles.nombre as nombre, singular.marca as marca, utiles.cantidad as cantidad, utiles.precio as precio from utiles inner join singular where utiles.id = singular.idutiles',function(err, utiles){
 
 			res.view('singular', {
 				util: utiles
