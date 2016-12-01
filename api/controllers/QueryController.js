@@ -96,7 +96,7 @@ module.exports = {
       var a = 1;
       var obj = [];
       while(a<=13){
-      Utiles.query('SELECT utiles.nombre as Nombre, carrera.nombrecarrera, count(idcompra) as Cantidad FROM carrera inner join alumnocarrera on carrera.idcarrera = alumnocarrera.idcarrera inner join alumno on alumnocarrera.idusuario = alumno.idusuario  inner join user on alumno.idusuario = user.id inner join comprautiles on user.id = comprautiles.iduser inner join detallescompra on comprautiles.idcompra = detallescompra.idcompra inner join utiles on detallescompra.idutiles = utiles.id where carrera.idcarrera='+a+' group by utiles.nombre order by Cantidad desc limit 3'
+      Utiles.query('Select * from Locales'
       , function(err, results) {
         if (err) return res.serverError(err);
         obj[a-1]=results;
