@@ -12,7 +12,7 @@ angular.module('ModuloHomePage').controller('ControladorDeHomePage', ['$scope', 
     
     $http.put('/login', {
       email: $scope.loginForm.email,
-      //contraseña: $scope.loginForm.password
+      contraseñaEncriptada: $scope.loginForm.password
     })
     .then(function onSuccess (response){
      // lleva a 
