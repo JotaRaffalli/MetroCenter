@@ -83,7 +83,7 @@
       			<th scope="row"><h3><%= paquete.nombre %></h3><p style="color: gray;"><%= paquete.descripcion %></p></th>
       			<td><%- paquete.cantidad %></td>
       			<td><%- paquete.precio %> Bs.</td>
-      			<td><button class="btn btn-xs btn-primary" href="/commerce/paquete/<%= paquete.id %>" > Comprar <span class="glyphicon glyphicon-shopping-cart"></span></button> </td>
+      			<td><a class="btn btn-xs btn-primary" href="/commerce/paquete/<%= paquete.idutiles %>" > Comprar <span class="glyphicon glyphicon-shopping-cart"></span></a> </td>
     		</tr>
   		<% }); %>
   		</tbody>
