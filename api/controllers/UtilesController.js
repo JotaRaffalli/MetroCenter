@@ -41,6 +41,7 @@ module.exports = {
 						Utiles.update({id: util.id},{cantidad: (util.cantidad-1)}).exec(function aftewards(err, updated){
 						});
 						console.log('antes de create 2');
+						DetallesCompra.create({idcompra: idCompra, idutiles: req.param('id'), precio: util.precio, cantidad: 1}).exec(function afterwards(err, compra){
 							if(err) return next(err);
 							if(!compra) return next();
 						});
