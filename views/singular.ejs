@@ -84,7 +84,7 @@
       <th scope="row"><%= utiles.nombre %></th>
       <td><%- utiles.cantidad %></td>
       <td><%- utiles.precio %> Bs.</td>
-      <td><button class="btn btn-xs btn-primary" onclick="AddtoCart('<%= utiles.nombre %>','1',<%- utiles.precio %>)" >Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button> </td>
+      <td><button class="btn btn-xs btn-primary" onclick="AddtoCart('<%= utiles.nombre %>','1',<%= utiles.id %>,<%- utiles.precio %>)" >Agregar al carrito <span class="glyphicon glyphicon-shopping-cart"></span></button> </td>
     </tr>
   <% }); %>
   </tbody>
@@ -161,23 +161,24 @@
                 var cellPrice = row.insertCell(2);
                 cellPrice.align="right";
                 //fill cells with values from current product object of our array
-                cellName.innerHTML = shoppingCart[product].Name;
-                cellDescription.innerHTML = shoppingCart[product].Description;
-                cellPrice.innerHTML = shoppingCart[product].Price;
-                cart_total_price+=shoppingCart[product].Price;
+                cellName.innerHTML = shoppingCart[product].Nombre;
+                cellDescription.innerHTML = shoppingCart[product].Cantidad;
+                cellPrice.innerHTML = shoppingCart[product].Precio;
+                cart_total_price+=shoppingCart[product].Precio;
             }
             //fill total cost of our shopping cart 
             document.getElementById("cart_total").innerHTML=cart_total_price;
         }
         
         
-        function AddtoCart(name,description,price){
+        function AddtoCart(nombre,cantidad,id,precio){
            //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
            var singleProduct = {};
            //Fill the product object with data
-           singleProduct.Name=name;
-           singleProduct.Description=description;
-           singleProduct.Price=price;
+           singleProduct.Nombre=nombre;
+           singleProduct.Cantidad=cantidad;
+           singleProduct.Precio=precio;
+           singleProduct.Id=id;
            //Add newly created product to our shopping cart 
            shoppingCart.push(singleProduct);
            //call display function to show on screen

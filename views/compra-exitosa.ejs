@@ -12,7 +12,34 @@
 	<link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
 </head>
+<header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
+    <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
+      
+          <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      
+            <!-- Lineas que salen cuando el menu se colapsa-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Nombre de la app -->
+          <a class="navbar-brand" href="/"><img src="/./images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+          <ul class="nav navbar-nav" style="padding-left: 250px">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/commerce">Tienda</a></li>
+            <li><a href="/locales">Locales</a></li> 
+            <li><a href="/espacios">Espacios</a></li> 
+             <li><a href="/espacios">Estacionamiento</a></li> 
+            <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
+          </ul>
+          </div>
+        </nav>
+  </header>
 <div class="alert alert-success">
-  <strong>Success!</strong> Indicates a successful or positive action.
+  <strong>Compra Exitosa!</strong> Puedes Revisar tus compras recientes en tu perfil :)
 </div>
+<a href="/commerce/compra-exitosa" class="btn btn-primary btn-block">Proceder a comprar <i class="fa fa-angle-right"></i></a>
 </html>

@@ -6,8 +6,9 @@
  */
 
 module.exports = {
-		
+
 	tiendaSingular: function (req,res){
+
 		Utiles.find().exec(function(err, utiles){
 
 			res.view('singular', {
@@ -38,7 +39,8 @@ module.exports = {
 				if(err) return next(err);
 				if(!compra) return next();
 
-					res.view('tienda');
+					res.view('compra-exitosa');
+					
 				});
 			});
     }
