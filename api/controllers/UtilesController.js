@@ -35,7 +35,8 @@ module.exports = {
     			{
 						if(err) return next(err);
 						if(!compra) return next();
-						idCompra=compra.idcompra;
+						var idCompra=compra.id;
+						console.log(idCompra);
 						console.log('antes de update');
 						Utiles.update({id: util.id},{cantidad: (util.cantidad-1)}).exec(function aftewards(err, updated){
 						});
