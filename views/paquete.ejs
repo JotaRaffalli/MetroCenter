@@ -4,16 +4,16 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <title>Tienda</title>
-  <!-- Meta -->
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-  <!-- Favicon -->
-  <link href="favicon.html" rel="shortcut icon">
-  <link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
+	<title>Tienda</title>
+	<!-- Meta -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- Favicon -->
+	<link href="favicon.html" rel="shortcut icon">
+	<link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
 </head>
 <header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
     <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
@@ -64,28 +64,35 @@
         </nav>
   </header>
 <body>
-<table class="table" style="width: 70%;" align="center" >
-      <thead>
-        <tr>
-          <th>Artículo</th>
-          <th>Marca</th>
-          <th>Disponibilidad</th>
-          <th>Precio</th>
-          <th>Comprar</th>
-        </tr>
-      </thead>
-    <tbody>
-      <% util.forEach(function(utiles)  { %>
-         <tr>
-            <th scope="row"><h3><%- utiles.nombre %></h3></th>
-            <td><%- utiles.marca %></td>
-            <td><%- utiles.cantidad %></td>
-            <td><%- utiles.precio %> Bs.</td>
-            <td><p><a class="btn btn-lg btn-primary" href="/commerce/singular/<%= utiles.id %>" role="button">Click Aquí</a></p></td>
-        </tr>        
-      <% }); %>
-    </tbody>
-</table> 
+	<div style="margin-top: 60px;">
+		<h2 align="center"><strong>Paquetes</strong></h2>
+		<p align="center" style="color: gray">Compra paquetes especialmente diseñados para ti!</p>
+	</div>
+
+	<table class="table" style="width: 70%;" align="center" >
+  		<thead>
+    		<tr>
+		      	<th>Artículo</th>
+		      	<th>Disponibilidad</th>
+ 	    		<th>Precio</th>
+    		</tr>
+  		</thead>
+		<tbody>
+  		<% paquetes.forEach(function(paquete)  { %>
+    		<tr>
+      			<th scope="row"><h3><%= paquete.nombre %></h3><p style="color: gray;"><%= paquete.descripcion %></p></th>
+      			<td><%- paquete.cantidad %></td>
+      			<td><%- paquete.precio %> Bs.</td>
+      			<td><a class="btn btn-xs btn-primary" href="/commerce/paquete/<%= paquete.id %>" > Comprar <span class="glyphicon glyphicon-shopping-cart"></span></a> </td>
+    		</tr>
+  		<% }); %>
+  		</tbody>
+	</table>
+
+  <!-- Tabla Carrito -->
+
+
+
 
 
 </body>

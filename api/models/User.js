@@ -30,13 +30,13 @@ module.exports = {
   	},   
 
     carnet : {
-      type: 'string',
+      type: 'int',
       required: true,
       unique: true,
     },
 
     cedula : {
-      type: 'string',
+      type: 'int',
       unique: true,
     },
 
@@ -46,7 +46,6 @@ module.exports = {
 
     nivelDeAcceso: {
       type: 'integer',
-      unique: true,
     },
 
   	contraseñaEncriptada : {

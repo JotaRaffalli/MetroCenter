@@ -21,8 +21,16 @@ module.exports = {
 
   	hora_entrada : {
   		type: 'time'
-  	}
+  	},
 
+    nombre: {
+      type: 'string',
+    },
+
+    idespacio : {
+      type: 'int',
+      required: true,
+    },
   }
 };
 

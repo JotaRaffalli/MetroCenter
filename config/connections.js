@@ -42,19 +42,19 @@ module.exports.connections = {
   ***************************************************************************/
   MetroCenterMysqlServer: {
     adapter: 'sails-mysql',
-    host: 'localhost',
-    user: 'metro_center_db', //optional
-    password: 'holdthedoor', //optional
-    database: 'metro_center_db' //optional
+    host: 'sql9.freesqldatabase.com',
+    user: 'sql9147287', //optional
+    password: 'fBEFEEmhmK', //optional
+    database: 'sql9147287' //optional
   },
 
-  Sakila : {
+  /*Sakila : {
     adapter: 'sails-mysql',
     host: 'localhost',
     user: 'sakila', //optional
     password: 'sakila', //optional
     database: 'sakila' //optional
-  },
+  },*/
 
 
 

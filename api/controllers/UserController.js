@@ -11,8 +11,11 @@ module.exports = {
 
     // Try to look up user using the provided email address
       //var usuario;
+      var c = req.param('contraseñaEncriptada');
+      console.log(c);
       User.findOne({
-      email: req.param('email')
+      email: req.param('email'),
+      contraseñaEncriptada: req.param('contraseñaEncriptada')
     }, function foundUser(err, user) {
       if (err) return res.negotiate(err);
       if (!user) return res.notFound();

@@ -35,7 +35,7 @@
           </button>
 
           <!-- Nombre de la app -->
-          <a class="navbar-brand" href="/"><img src="images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
+          <a class="navbar-brand" href="/"><img src="/./images/MetrocenterLogoForPage.png" id="MetroCenterImg"></a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
           <ul class="nav navbar-nav" style="padding-left: 250px">
             <li><a href="/">Home</a></li>
@@ -101,8 +101,8 @@
 				<h2>Horario</h2>
 				<p class='lead'><%= lcl.horario %></p>
 				<h2>Métodos de Pago</h2>
-				<p class='lead'>Crédito: <%= lcl.pagoCredito %></p>
-				<p class='lead'>Débito: <%= lcl.pagoDebito %></p>
+				<p class='lead'>Crédito: <% if(lcl.pagoCredito){%> <span class="glyphicon glyphicon-ok"></span> <%} else{ %> <span class="glyphicon glyphicon-remove"></span> <%}%></p>
+				<p class='lead'>Débito: <% if(lcl.pagoDebito){ %><span class="glyphicon glyphicon-ok"></span> <%} else{ %> <span class="glyphicon glyphicon-remove"></span> <%}%></p>
 			</div>
 		</div>
 	</div>

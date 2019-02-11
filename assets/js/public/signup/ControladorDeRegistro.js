@@ -15,7 +15,7 @@ angular.module('ModuloDeRegistro').controller('ControladorDeRegistro', ['$scope'
 			apellido: $scope.signupForm.title,
 			email: $scope.signupForm.email,
 			carnet: $scope.signupForm.carnet,
-			contraseña: $scope.signupForm.password
+			contraseñaEncriptada: $scope.signupForm.password
 		})
 		.then(function onSuccess(sailsResponse){
 			window.location = '/usuario-registrado';

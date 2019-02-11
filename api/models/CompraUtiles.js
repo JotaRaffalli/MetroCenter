@@ -8,9 +8,8 @@
 module.exports = {
 
   attributes: {
-  	idutiles:{
+  	idcompra:{
   		type: 'string',
-  		required: true,
   	},
   	iduser: {
   		type: 'string',
@@ -19,6 +18,9 @@ module.exports = {
   	entrega: {
   		type: 'boolean',
   	},
+    montototal: {
+      type: 'float',
+    },
   },
 };
 

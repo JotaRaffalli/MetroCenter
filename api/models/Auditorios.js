@@ -9,12 +9,12 @@ module.exports = {
   connection: 'MetroCenterMysqlServer',
   attributes: {
 
-  	nombre : { 
-  		type: 'string',
+  	idespacio : { 
+  		type: 'int',
   		required: true,
   	},
 
-  	localizacion : {
+  	nombre : {
   		type: 'string'
   	},
 

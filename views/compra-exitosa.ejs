@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Compras Recientes</title>
+	<title>Tienda</title>
+	<!-- Meta -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- Favicon -->
+	<link href="favicon.html" rel="shortcut icon">
+	<link href="http://fonts.googleapis.com/css?family=Lato:400,300" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
 </head>
-<body>
-	<header> 
+<header ng-app="ModuloHomePage" ng-controller="ControladorDeHomePage" ng-cloak> 
     <nav style="margin-top:1px;" class="navbar navbar-default navbar-inverse">
       
           <!-- Manera de Bootstrap para colapasar el menu de navegacion -->
@@ -21,33 +29,17 @@
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
           <ul class="nav navbar-nav" style="padding-left: 250px">
             <li><a href="/">Home</a></li>
-            <li><a href="/commerce">Tienda</a></li>
+            <li class="active"><a href="/commerce">Tienda</a></li>
             <li><a href="/locales">Locales</a></li> 
             <li><a href="/espacios">Espacios</a></li> 
              <li><a href="/espacios">Estacionamiento</a></li> 
-            <li class="active"><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
+            <li><a ng-click="verificarLog()" href="/perfil">Perfil</a></li>
           </ul>
+          </div>
         </nav>
   </header>
+<div class="alert alert-success">
+  <strong>Compra Exitosa!</strong> Puedes Revisar tus compras recientes en tu perfil :)
+</div>
 
-    <h2 style=" margin-top: 60px;" align="center" >Compras Recientes</h2>
-
-	  <table class="table" style="width: 70%; margin-top: 60px;" align="center" >
-	  <thead>
-	    <tr>
-	      <th scope="col">Nombre</th>
-	      <th scope="col">Monto pagado</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  <% comp.forEach(function(Compras)  { %>
-	    <tr>
-	      <th scope="row"><%= Compras.nombre %></th>
-	      <td scope="row"><%= Compras.precio %> Bs.</td>
-	    </tr>
-	  <% }); %>
-	  </tbody>
-	</table>
-
-</body>
 </html>

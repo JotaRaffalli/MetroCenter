@@ -38,6 +38,7 @@ module.exports.routes = {
   'POST /signup': 'UserController.create',
   'PUT /login'  : 'UserController.login',
   'POST /modificado': 'PerfilController.updatePerfil',
+  'POST /commerce/compra': 'UtilesController.compraSingular',
   '/perfil/compras/:id' : 'PerfilController.compras_recientes',
   '/perfil' : 'PerfilController.perfil',
   '/espacios' : {view: 'espacios'},
@@ -47,9 +48,13 @@ module.exports.routes = {
   '/auditorios' : 'AuditoriosController.auditorios',
   '/tarea' : {view: 'tarea'},
   '/tarea/:idquery' : 'QueryController.Consulta',
+  '/tarea/6' : 'QueryController.utilesMasComprados',
   '/commerce': {view: 'tienda'},
   '/commerce/singular': 'UtilesController.tiendaSingular',
+  '/commerce/paquete': 'UtilesController.tiendaPaquetes',
   '/commerce/singular/:id': 'UtilesController.compraSingular',
+  '/commerce/paquete/:id': 'UtilesController.compraSingular',
+  '/commerce/compra-exitosa': {view: 'compra-exitosa'},
   '/usuario-registrado': {view: 'usuario-registrado'}
 
   /***************************************************************************
